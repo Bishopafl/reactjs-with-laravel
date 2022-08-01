@@ -32,6 +32,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### Project Notes:
 
 ## Component notes
-`rce` creates a reactClassExportComponent in VS Code - super handy
+- `rce` creates a reactClassExportComponent in VS Code - super handy
 
-Fragments let you group a list of children without adding extra nodes to the DOM.
+- Fragments let you group a list of children without adding extra nodes to the DOM.
+
+- Adding `fluid={true}` will set a react container to fluid so it takes up the whole screensize (will need to also zero the padding for the element)
+

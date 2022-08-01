@@ -31,7 +31,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### Project Notes:
 
-<<<<<<< HEAD
 ## Component notes
-=======
->>>>>>> 0012f07ae56b82ed6d72e2fda0b4649b17861326
+`rce` creates a reactClassExportComponent in VS Code - super handy
+
+Fragments let you group a list of children without adding extra nodes to the DOM.

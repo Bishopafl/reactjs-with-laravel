@@ -31,4 +31,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### Project Notes:
 
+<<<<<<< HEAD
 ## Component notes
+=======
+>>>>>>> 0012f07ae56b82ed6d72e2fda0b4649b17861326

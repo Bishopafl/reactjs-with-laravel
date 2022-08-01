@@ -46,3 +46,30 @@
     height: 5rem;
     width: 5rem;
 }
+
+.serviceCard {
+    margin: 0.313rem 0.313rem 0.313rem 0.313rem; 
+    height: 22rem;
+    padding: 3.75rem 1.875rem 3.75rem 1.875rem;
+    box-shadow: 0 0 0.5rem 0 rgb(4, 55, 105, 0.2);
+}
+
+.serviceCard:hover {
+    box-shadow: 0 0 1rem 0 rgb(4, 55, 105, 0.2);
+}
+
+.serviceName {
+    color: #051b35;
+    margin-top: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.serviceDescription {
+    color: #2e2e2e;
+    margin-top: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}

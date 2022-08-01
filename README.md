@@ -38,3 +38,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 - Adding `fluid={true}` will set a react container to fluid so it takes up the whole screensize (will need to also zero the padding for the element)
 
+- Using react-bootstrap, you define bootstrap classes for components as such: `lg={4} md={6} sm={12}`
+

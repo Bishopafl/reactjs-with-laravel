@@ -91,3 +91,19 @@
     margin: -1.9rem auto 0;
     margin-bottom: 3rem;
 }
+
+.navTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.navTitleScroll {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #878788;
+    font-size: 30px;
+    text-transform: uppercase;
+}   

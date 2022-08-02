@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import whiteLogo from '../../asset/image/logo_white.png';
 import blackLogo from '../../asset/image/logo_black.png';
+import '../../asset/css/bootstrap.min.css';
+import '../../asset/css/custom.css';
 
 class TopNavigation extends Component {
 
@@ -17,6 +19,8 @@ class TopNavigation extends Component {
         this.state={
             navBarTitle: 'navTitle', // string
             navBarLogo: [ whiteLogo ], // object
+            navBarBackground: 'navBackground',
+            navLinkItem: 'navLinkItem',
         }
     }
 
@@ -24,12 +28,16 @@ class TopNavigation extends Component {
         if(window.scrollY > 100) {
             this.setState({
                 navBarTitle: 'navTitleScroll',
-                navBarLogo: [ blackLogo ]
+                navBarLogo: [ blackLogo ],
+                navBarBackground: 'navBackgroundScroll',
+                navLinkItem: 'navLinkItemScroll'
             })
         } else if(window.scrollY < 100) {
             this.setState({
                 navBarTitle: 'navTitle',
-                navBarLogo: [ whiteLogo ]
+                navBarLogo: [ whiteLogo ],
+                navBarBackground: 'navBackground',
+                navLinkItem: 'navLinkItem'
             })
         }
     }
@@ -42,7 +50,7 @@ class TopNavigation extends Component {
     render() {
         return (
         <Fragment>
-            <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
+            <Navbar className={this.state.navBarBackground} collapseOnSelect fixed="top" expand="lg" variant="dark">
                 <Container>
                     <Navbar.Brand className={this.state.navBarTitle} href="#home">
                         <img src={this.state.navBarLogo} alt="" />
@@ -51,14 +59,14 @@ class TopNavigation extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         
-                    </Nav>
+                    </Nav> 
                     <Nav>
-                        <Nav.Link href="#deets">HOME</Nav.Link>
-                        <Nav.Link href="#deets">ABOUT</Nav.Link>
-                        <Nav.Link href="#deets">SERVICE</Nav.Link>
-                        <Nav.Link href="#deets">PORTFOLIO</Nav.Link>
-                        <Nav.Link href="#deets">ARTWORK</Nav.Link>
-                        <Nav.Link href="#deets">CONTACT US</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#deets">HOME</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#deets">ABOUT</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#deets">SERVICE</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#deets">PORTFOLIO</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#deets">ARTWORK</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#deets">CONTACT US</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

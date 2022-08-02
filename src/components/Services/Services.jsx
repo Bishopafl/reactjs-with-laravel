@@ -3,8 +3,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 import cloudnetworkIcon from '../../asset/image/cloud-network.gif';
 import barchartIcon from '../../asset/image/bar-chart.gif';
 import internetIcon from '../../asset/image/internet.gif';
-import '../../asset/css/bootstrap.min.css';
-import '../../asset/css/custom.css';
 
 export class Services extends Component {
   render() {

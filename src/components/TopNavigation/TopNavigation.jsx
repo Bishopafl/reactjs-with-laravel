@@ -15,18 +15,21 @@ class TopNavigation extends Component {
          * will load for that view `navTitleScroll`
          */
         this.state={
-            navBarTitle: "navTitle"
+            navBarTitle: 'navTitle', // string
+            navBarLogo: [ whiteLogo ], // object
         }
     }
 
     onScroll = () => {
         if(window.scrollY > 100) {
             this.setState({
-                navBarTitle: 'navTitleScroll'
+                navBarTitle: 'navTitleScroll',
+                navBarLogo: [ blackLogo ]
             })
         } else if(window.scrollY < 100) {
             this.setState({
-                navBarTitle: 'navTitle'
+                navBarTitle: 'navTitle',
+                navBarLogo: [ whiteLogo ]
             })
         }
     }
@@ -41,7 +44,9 @@ class TopNavigation extends Component {
         <Fragment>
             <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand className={this.state.navBarTitle} href="#home">Adam Lopez</Navbar.Brand>
+                    <Navbar.Brand className={this.state.navBarTitle} href="#home">
+                        <img src={this.state.navBarLogo} alt="" />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">

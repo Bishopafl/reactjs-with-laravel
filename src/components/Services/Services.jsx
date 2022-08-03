@@ -4,7 +4,7 @@ import cloudnetworkIcon from '../../asset/image/cloud-network.gif';
 import barchartIcon from '../../asset/image/bar-chart.gif';
 import internetIcon from '../../asset/image/internet.gif';
 
-export class Services extends Component {
+class Services extends Component {
   render() {
     return (
       <Fragment>

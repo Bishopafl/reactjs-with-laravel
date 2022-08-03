@@ -17,7 +17,6 @@ class TopBanner extends Component {
                     </Row>
                 </Container>
             </div>
-
         </Container>
       </Fragment>
     )

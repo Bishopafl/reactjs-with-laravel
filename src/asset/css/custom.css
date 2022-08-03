@@ -1,5 +1,5 @@
 .topFixedBanner {
-    background-image: url("../image/banner.jpg");
+    background-image: url("../image/summary.jpeg");
     min-height: 34.375rem;
     background-attachment: fixed;
     background-position: center;
@@ -139,4 +139,20 @@
     color: #000;
     font-weight: 600;
     font-size: 1rem;
+}
+
+.summaryBanner {
+    background-image: url("../image/banner.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: top top;
+    background-repeat: no-repeat;
+    background-size: cover;   
+}
+
+.summaryBannerOverlay {
+    position: absolute;
+    min-height: 500px;
+    width: 100%;
+    background-color: rgba(40, 26, 9, 0.806);
 }

@@ -6,6 +6,7 @@ import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import calendarIcon from '../../asset/image/calendar.gif';
 import networkIcon from '../../asset/image/network.gif';
 import waterIcon from '../../asset/image/water.gif';
+import CountUp from 'react-countup';
 
 class Summary extends Component {
   render() {
@@ -19,7 +20,16 @@ class Summary extends Component {
                             <Row className='countSection'>
                                 <Col>
                                     <img className='summaryIcon' src={calendarIcon} />
-                                    <h1 className='countNumber'>66,481</h1>
+                                    <h1 className='countNumber'>
+                                    <CountUp start={0} end={66481}>
+                                        {({ countUpRef, start }) => (
+                                            <div>
+                                            <span ref={countUpRef} />
+                                            </div>
+                                        )}
+                                    </CountUp>
+                                        
+                                    </h1>
                                     <h4 className='countText'>Hours coding</h4>
                                     <hr className="text-light w-25 m-auto" />
                                 </Col>

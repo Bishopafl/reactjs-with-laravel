@@ -7,6 +7,7 @@ import calendarIcon from '../../asset/image/calendar.gif';
 import networkIcon from '../../asset/image/network.gif';
 import waterIcon from '../../asset/image/water.gif';
 import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 class Summary extends Component {
   render() {
@@ -21,14 +22,13 @@ class Summary extends Component {
                                 <Col>
                                     <img className='summaryIcon' src={calendarIcon} />
                                     <h1 className='countNumber'>
-                                    <CountUp start={0} end={66481}>
-                                        {({ countUpRef, start }) => (
-                                            <div>
-                                            <span ref={countUpRef} />
-                                            </div>
-                                        )}
-                                    </CountUp>
-                                        
+                                        <CountUp start={0} end={66481}>
+                                            {({ countUpRef, start }) => (    
+                                                <VisibilitySensor onChange={start} delayedCall>
+                                                    <span ref={countUpRef} />
+                                                </VisibilitySensor>  
+                                            )}
+                                        </CountUp>
                                     </h1>
                                     <h4 className='countText'>Hours coding</h4>
                                     <hr className="text-light w-25 m-auto" />
@@ -36,14 +36,30 @@ class Summary extends Component {
                                 
                                 <Col>
                                     <img className='summaryIcon' src={networkIcon} />
-                                    <h1 className='countNumber'>77</h1>
+                                    <h1 className='countNumber'>
+                                        <CountUp start={0} end={77}>
+                                            {({ countUpRef, start }) => (    
+                                                <VisibilitySensor onChange={start} delayedCall>
+                                                    <span ref={countUpRef} />
+                                                </VisibilitySensor>  
+                                            )}
+                                        </CountUp>
+                                    </h1>
                                     <h4 className='countText'>Github Repositories</h4>
                                     <hr className="text-light w-25 m-auto" />
                                 </Col>
 
                                 <Col>
                                     <img className='summaryIcon' src={waterIcon} />
-                                    <h1 className='countNumber'>8</h1>
+                                    <h1 className='countNumber'>
+                                        <CountUp start={0} end={8}>
+                                            {({ countUpRef, start }) => (    
+                                                <VisibilitySensor onChange={start} delayedCall>
+                                                    <span ref={countUpRef} />
+                                                </VisibilitySensor>  
+                                            )}
+                                        </CountUp>
+                                    </h1>
                                     <h4 className='countText'>Cups of water daily</h4>
                                     <hr className="text-light w-25 m-auto" />
                                 </Col>

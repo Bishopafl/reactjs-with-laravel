@@ -15,16 +15,16 @@ class Services extends Component {
             <Row>
                 <Col lg={4} md={6} sm={12}>
                     <div className='serviceCard text-center'>
-                        <img alt='CloudConfig' className='cloudnetworkIcon' src={cloudnetworkIcon} />
-                        <h2 className='serviceName'>Cloud Configuration</h2>
-                        <p className='serviceDescription'>Configuring and deploying web applications via cloud services such as AWS</p>
+                        <img className='cloudnetworkIcon' src={cloudnetworkIcon} />
+                        <h2 className='serviceName'>Web Development</h2>
+                        <p className='serviceDescription'>Developing and deploying web applications via cloud services such as AWS</p>
                     </div>
                 </Col>
                 <Col lg={4} md={6} sm={12}>
                     <div className='serviceCard text-center'>
-                        <img alt='LeadConversion' className='barchartIcon' src={barchartIcon} />
-                        <h2 className='serviceName'>Lead Conversion</h2>
-                        <p className='serviceDescription'>Increate web conversion and lead generation through easy-to-use interfaces</p>
+                        <img className='barchartIcon' src={barchartIcon} />
+                        <h2 className='serviceName'>Increase Engagement</h2>
+                        <p className='serviceDescription'>Increate web engagement and conversion through easy-to-use interfaces</p>
                     </div>
                 </Col>
                 <Col lg={4} md={6} sm={12}>

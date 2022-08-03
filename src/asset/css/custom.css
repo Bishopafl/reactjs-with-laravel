@@ -32,17 +32,7 @@
     font-size: 1.375rem;
 }
 
-.cloudnetworkIcon {
-    height: 5rem;
-    width: 5rem;
-}
-
-.barchartIcon {
-    height: 5rem;
-    width: 5rem;
-}
-
-.internetIcon {
+.cloudnetworkIcon, .barchartIcon, .internetIcon {
     height: 5rem;
     width: 5rem;
 }
@@ -194,4 +184,16 @@
     margin-top: 25%;
     padding: 10px 10px 10px 10px;
     border-radius: 3px;
+}
+
+.iconBullet {
+    color: #205faa;
+    font-size: 16px;
+}
+
+.summaryIcon {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50px;
+    border: 2px solid black;
 }

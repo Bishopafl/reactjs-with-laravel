@@ -78,7 +78,7 @@
     background: #051b35 none repeat scroll 0 0;
     height: 0.188rem;
     width: 6.25rem;
-    margin: -1.9rem auto 0;
+    margin: 1.9rem auto 0;
     margin-bottom: 3rem;
 }
 
@@ -196,4 +196,28 @@
     width: 5rem;
     border-radius: 50px;
     border: 2px solid black;
+}
+
+.githubCatCard {
+    background-image: url("../image/github.gif");
+    height: 200px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.projectCard {
+    background: white;
+    width: 22em;
+    border-radius: 0.6rem;
+    margin: 1em;
+    cursor: pointer;
+    box-shadow: 0 13px 25px -5px;
+    transition: all ease 200ms;
+}
+
+.projectCard:hover {
+    transform: scale(1.03);
+    box-shadow: 0 13px 30px -5px;
 }

@@ -6,6 +6,7 @@ import Services from './components/Services/Services';
 import Summary from './components/Summary/Summary';
 import TopBanner from './components/TopBanner/TopBanner';
 import TopNavigation from './components/TopNavigation/TopNavigation';
+import Video from './components/Video/Video';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Summary />
       <RecentProject />
       <Courses />
+      <Video />
     </div>
   );
 }

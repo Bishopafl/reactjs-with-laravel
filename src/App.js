@@ -1,5 +1,6 @@
 import { React } from 'react';
 import Analysis from './components/Analysis/Analysis';
+import ClientReview from './components/ClientReview/ClientReview';
 import Courses from './components/Courses/Courses';
 import RecentProject from './components/RecentProject/RecentProject';
 import Services from './components/Services/Services';
@@ -19,6 +20,8 @@ function App() {
       <RecentProject />
       <Courses />
       <Video />
+      <ClientReview />
+      <Services />
     </div>
   );
 }

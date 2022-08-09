@@ -9,7 +9,7 @@ class AboutMe extends Component {
     return (
       <Fragment>
         <Container className='text-center'>
-            <h1 className='serviceMainTitle'>My Services</h1>
+            <h1 className='serviceMainTitle'>About Me</h1>
             <div className='bottom'></div>
             <Row>
                 <Col lg={6} md={6} sm={12}>

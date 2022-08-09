@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import faceImage from '../../asset/image/face.png';
-import { Typing, TypingStep } from "typing-effect-reactjs";
+import TypeIt from 'typeit-react';
 
 class AboutMe extends Component {
 
@@ -22,15 +22,20 @@ class AboutMe extends Component {
                     <div className='aboutMeBody'>
                         <h2 className='aboutMeDetails'>Hi there, I'm</h2>
                         <h2 className='aboutMeTitle'>Adam Lopez</h2>
-                        <h3 className='aboutMeDetails'>Working as 
-                            <Typing
-                                text={[
-                                    "a Full Stack Web Developer",
-                                    "a Father",
-                                    "a husband",
-                                    "attuned",
-                                ]}
-                                smartBackspace
+                        <h3 className='aboutMeDetails'>Working as <br />
+                            <TypeIt
+                                options={{
+                                    strings: [
+                                        "a Developer,",
+                                        "Programmer,",
+                                        "Father,",
+                                        "Husband,",
+                                        "and Student"
+                                    ],
+                                    speed: 100,
+                                    waitUntilVisible: true,
+                                    loop: true
+                                }}
                             />
                             <span id="aboutMeListDetails"></span>
                         </h3>

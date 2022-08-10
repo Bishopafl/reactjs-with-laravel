@@ -38,21 +38,37 @@ class Footer extends Component {
                     </div>
                 </Col>
 
-                <Col lg={3} md={6} sm={12}>
+                <Col lg={3} md={6} sm={12} className="p-5 text-justify">
                     <h2 className='footerName text-center'>Address</h2>
-                    <p className='footerDescription text-justify'>
-                      <FontAwesomeIcon icon={faMapLocationDot} /> Tampa, Florida <br />
-                      <FontAwesomeIcon icon={faEnvelope} /> Email: adamf04@gmail.com <br />
-                      <FontAwesomeIcon icon={faPhone} /> Phone: 8135008808 <br />
-                    </p>
+                    <div className='footerDescription d-grid'>
+                      <span>
+                        <FontAwesomeIcon icon={faMapLocationDot} /> Tampa, Florida
+                      </span>
+                      <span>
+                        <FontAwesomeIcon icon={faEnvelope} /> Email: adamf04@gmail.com
+                      </span>
+                      <span>
+                        <FontAwesomeIcon icon={faPhone} /> Phone: 8135008808
+                      </span>
+                    </div>
                 </Col>
 
-                <Col lg={3} md={6} sm={12}>
+                <Col lg={3} md={6} sm={12} className="p-5 text-justify">
                     <h2 className='footerName text-center'>Information</h2>
+                    <div className='d-grid footerLinks'>
+                      <a href="">About Me</a>
+                      <a href="">My Profile</a>
+                      <a href="">Contact Us</a>
+                    </div>
                 </Col>
 
-                <Col lg={3} md={6} sm={12}>
+                <Col lg={3} md={6} sm={12} className="p-5 text-justify">
                     <h2 className='footerName text-center'>Policy</h2>
+                    <div className='d-grid footerLinks'>
+                      <a href="">Refund Policy</a>
+                      <a href="">Terms And Condition</a>
+                      <a href="">Privacy Policy</a>
+                    </div>
                 </Col>
             </Row>
         </Container>

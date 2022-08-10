@@ -123,6 +123,10 @@
     font-size: 1rem;
 }
 
+.navbar-nav .nav-link.active {
+    color: #051b35;
+}
+
 .navLinkItemScroll {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -378,4 +382,17 @@ a.discord,
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
     font-weight: 400;
+}
+
+.footerLinks > a {
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.footerLinks > a:hover {
+    text-decoration: none;
+    color: rgb(101, 134, 255);
 }

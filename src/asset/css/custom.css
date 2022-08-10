@@ -337,3 +337,17 @@
     font-weight: 700;
     font-size: 24px;
 }
+
+.footerSection {
+    margin-top: 5rem;
+    box-shadow: 0 0 8px 0;
+    background-color: #051b35;
+}
+
+.footerName {
+    color: #fff;
+    margin-top: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;;
+    font-weight: 600;
+}

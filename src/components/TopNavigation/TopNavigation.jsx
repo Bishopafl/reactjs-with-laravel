@@ -19,6 +19,7 @@ class TopNavigation extends Component {
         this.state={
             navBarTitle: 'navTitle', // string
             navBarLogo: [ whiteLogo ], // object
+            navVariant: 'dark',
             navBarBackground: 'navBackground',
             navLinkItem: 'navLinkItem',
         }
@@ -30,14 +31,16 @@ class TopNavigation extends Component {
                 navBarTitle: 'navTitleScroll',
                 navBarLogo: [ blackLogo ],
                 navBarBackground: 'navBackgroundScroll',
-                navLinkItem: 'navLinkItemScroll'
+                navLinkItem: 'navLinkItemScroll',
+                navVariant: 'light'
             })
         } else if(window.scrollY < 100) {
             this.setState({
                 navBarTitle: 'navTitle',
                 navBarLogo: [ whiteLogo ],
                 navBarBackground: 'navBackground',
-                navLinkItem: 'navLinkItem'
+                navLinkItem: 'navLinkItem',
+                navVariant: 'dark',
             })
         }
     }
@@ -50,7 +53,7 @@ class TopNavigation extends Component {
     render() {
         return (
         <Fragment>
-            <Navbar className={this.state.navBarBackground} collapseOnSelect fixed="top" expand="lg" variant="dark">
+            <Navbar className={this.state.navBarBackground} collapseOnSelect fixed="top" expand="lg" variant={this.state.navVariant}>
                 <Container>
                     <Navbar.Brand className={this.state.navBarTitle} href="#home">
                         <img src={this.state.navBarLogo} alt="" />
@@ -61,12 +64,12 @@ class TopNavigation extends Component {
                         
                     </Nav> 
                     <Nav>
-                        <Nav.Link className={this.state.navLinkItem} href="#deets">HOME</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#deets">ABOUT</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#deets">SERVICE</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#deets">PORTFOLIO</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#deets">ARTWORK</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#deets">CONTACT US</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#">HOME</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#">ABOUT</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#">SERVICE</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#">PORTFOLIO</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#">ARTWORK</Nav.Link>
+                        <Nav.Link className={this.state.navLinkItem} href="#">CONTACT US</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

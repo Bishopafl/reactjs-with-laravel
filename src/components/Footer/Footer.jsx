@@ -14,7 +14,7 @@ class Footer extends Component {
       <Fragment>
         <Container fluid={true} className="footerSection">
             <Row>
-                <Col lg={3} md={6} sm={12} className="p-5 text-center">
+                <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-center">
                     <h2 className='footerName text-center'>Follow Us</h2>
                     <div className="socialContainer">
                       <a href="#" className='github social'>
@@ -38,8 +38,8 @@ class Footer extends Component {
                     </div>
                 </Col>
 
-                <Col lg={3} md={6} sm={12} className="p-5 text-justify">
-                    <h2 className='footerName text-center'>Address</h2>
+                <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-justify">
+                    <h2 className='footerName'>Address</h2>
                     <div className='footerDescription d-grid'>
                       <span>
                         <FontAwesomeIcon icon={faMapLocationDot} /> Tampa, Florida
@@ -53,8 +53,8 @@ class Footer extends Component {
                     </div>
                 </Col>
 
-                <Col lg={3} md={6} sm={12} className="p-5 text-justify">
-                    <h2 className='footerName text-center'>Information</h2>
+                <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-justify">
+                    <h2 className='footerName'>Information</h2>
                     <div className='d-grid footerLinks'>
                       <a href="">About Me</a>
                       <a href="">My Profile</a>
@@ -62,8 +62,8 @@ class Footer extends Component {
                     </div>
                 </Col>
 
-                <Col lg={3} md={6} sm={12} className="p-5 text-justify">
-                    <h2 className='footerName text-center'>Policy</h2>
+                <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-justify">
+                    <h2 className='footerName'>Policy</h2>
                     <div className='d-grid footerLinks'>
                       <a href="">Refund Policy</a>
                       <a href="">Terms And Condition</a>
@@ -71,6 +71,10 @@ class Footer extends Component {
                     </div>
                 </Col>
             </Row>
+        </Container>
+
+        <Container fluid={true} className='text-center copyrightSection'>
+          <a className='copyrightLink' href="#">Copyright 2015 by Adam Lopez, All Rights Reserved</a>
         </Container>
       </Fragment>
     )

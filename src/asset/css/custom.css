@@ -123,16 +123,17 @@
     font-size: 1rem;
 }
 
-.navbar-nav .nav-link.active {
-    color: #051b35;
-}
-
 .navLinkItemScroll {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     color: #000;
     font-weight: 600;
     font-size: 1rem;
+}
+
+.navLinkItemScroll:hover, .navLinkItemScroll:active {
+    text-decoration: none;
+    color: #051b35;
 }
 
 .summaryBanner {
@@ -213,7 +214,6 @@
 
 .projectCard {
     background: white;
-    width: 22em;
     border-radius: 0.6rem;
     margin: 1em;
     cursor: pointer;
@@ -381,7 +381,7 @@ a.discord,
     margin-top: 1rem;
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .footerLinks > a {
@@ -395,4 +395,22 @@ a.discord,
 .footerLinks > a:hover {
     text-decoration: none;
     color: rgb(101, 134, 255);
+}
+
+.copyrightSection {
+    padding: 20px 20px 20px 20px;
+    background-color: #031021;
+}
+
+.copyrightLink {
+    color: white;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.copyrightLink:hover {
+    color: white;
+    text-decoration: none;
 }

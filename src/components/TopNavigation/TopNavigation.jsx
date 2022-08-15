@@ -1,14 +1,15 @@
 import React, { Component, Fragment } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, NavItem } from 'react-bootstrap';
 import whiteLogo from '../../asset/image/logo_white.png';
 import blackLogo from '../../asset/image/logo_black.png';
 import '../../asset/css/bootstrap.min.css';
 import '../../asset/css/custom.css';
+import { Link, NavLink, Route } from 'react-router-dom';
 
 class TopNavigation extends Component {
 
-    constructor() {
-        super(); // call the super function when the component is loaded
+    constructor(props) {
+        super(props); // call the super function when the component is loaded
         /**
          * This will show two different states for our nav bar
          * a class `.navTitle` is made for the inital view
@@ -22,6 +23,7 @@ class TopNavigation extends Component {
             navVariant: 'dark',
             navBarBackground: 'navBackground',
             navLinkItem: 'navLinkItem',
+            pageTitle: props.title,
         }
     }
 
@@ -32,7 +34,7 @@ class TopNavigation extends Component {
                 navBarLogo: [ blackLogo ],
                 navBarBackground: 'navBackgroundScroll',
                 navLinkItem: 'navLinkItemScroll',
-                navVariant: 'light'
+                navVariant: 'light',
             })
         } else if(window.scrollY < 100) {
             this.setState({
@@ -53,9 +55,10 @@ class TopNavigation extends Component {
     render() {
         return (
         <Fragment>
+            <title>{this.state.pageTitle}</title>
             <Navbar className={this.state.navBarBackground} collapseOnSelect fixed="top" expand="lg" variant={this.state.navVariant}>
                 <Container>
-                    <Navbar.Brand className={this.state.navBarTitle} href="#home">
+                    <Navbar.Brand className={this.state.navBarTitle} href="/D">
                         <img src={this.state.navBarLogo} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -64,12 +67,24 @@ class TopNavigation extends Component {
                         
                     </Nav> 
                     <Nav>
-                        <Nav.Link className={this.state.navLinkItem} href="#">HOME</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#">ABOUT</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#">SERVICE</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#">PORTFOLIO</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#">ARTWORK</Nav.Link>
-                        <Nav.Link className={this.state.navLinkItem} href="#">CONTACT US</Nav.Link>
+                        <NavItem>
+                            <Nav.Link className={this.state.navLinkItem} href="/" to="/">HOME</Nav.Link>    
+                        </NavItem>
+                        <NavItem>
+                            <Nav.Link className={this.state.navLinkItem} href="/about" to="/about">ABOUT</Nav.Link>
+                        </NavItem>
+                        <NavItem>
+                            <Nav.Link className={this.state.navLinkItem} href="/service" to="/service">SERVICE </Nav.Link>
+                        </NavItem>
+                        <NavItem>
+                            <Nav.Link className={this.state.navLinkItem} href="/portfolio" to="/portfolio">PORTFOLIO </Nav.Link>
+                        </NavItem>
+                        <NavItem>
+                            <Nav.Link className={this.state.navLinkItem} href="/artwork" to="/artwork">ARTWORK </Nav.Link>
+                        </NavItem>
+                        <NavItem>
+                            <Nav.Link className={this.state.navLinkItem} href="/contact" to="/contact">CONTACT US </Nav.Link>
+                        </NavItem>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

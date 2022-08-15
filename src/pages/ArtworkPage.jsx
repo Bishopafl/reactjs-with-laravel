@@ -8,7 +8,7 @@ class ArtworkPage extends Component {
   render() {
     return (
       <Fragment>
-        <TopNavigation />
+        <TopNavigation title='Artwork' />
         <PageTop pageTitle="Creative Designs" />
         <Artwork />
         <Footer />

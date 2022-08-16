@@ -7,7 +7,6 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 class Footer extends Component {
   render() {
@@ -68,8 +67,8 @@ class Footer extends Component {
                     <div className='d-grid footerLinks'>
                       <Nav>
                         <Nav.Link className='footerLink p-0' to="/refund" href="/refund">Refund Policy</Nav.Link>
+                        <Nav.Link className='footerLink p-0' to="/terms-and-conditions" href="/terms-and-conditions">Terms And Conditions</Nav.Link>
                       </Nav>
-                      <a href="">Terms And Condition</a>
                       <a href="">Privacy Policy</a>
                     </div>
                 </Col>

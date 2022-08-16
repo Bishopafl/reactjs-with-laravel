@@ -9,10 +9,10 @@ class RefundDescription extends Component {
                 <Row>
                     <Col lg={12} md={12} sm={12} xs={12}>
                         <div className="mt-5">
-                            <h1>Refund Policy</h1>
+                            <h1 className='serviceName'>Refund Policy</h1>
                             <hr />
                         </div>
-                        <p>
+                        <p className='serviceDescription refundSection'>
                             <ul>
                                 <li>
                                     <h3>Policy Guidelines</h3>
@@ -21,9 +21,9 @@ class RefundDescription extends Component {
                                     <p>Several types of goods are exempt from being returned. Perishable goods such as food, flowers, newspapers or magazines cannot be returned. We also do not accept products that are intimate or sanitary goods, hazardous materials, or flammable liquids or gases.</p>
                                     <p>Additional non-returnable items:</p>
                                     <ul>
-                                        <li>* Gift cards</li>
-                                        <li>* Downloadable software products</li>
-                                        <li>* Some health and personal care items</li>
+                                        <li>Gift cards</li>
+                                        <li>Downloadable software products</li>
+                                        <li>Some health and personal care items</li>
                                     </ul>
                                 </li>
                                 

@@ -14,6 +14,7 @@ import AboutPage from '../pages/AboutPage';
 import ArtworkPage from '../pages/ArtworkPage';
 import ContactPage from '../pages/ContactPage';
 import RefundPage from '../pages/RefundPage';
+import TermsPage from '../pages/TermsPage';
 
 class AppRouter extends Component {
   render() {
@@ -29,6 +30,7 @@ class AppRouter extends Component {
               <Route exact path="/contact" component={ withRouter(ContactPage) } />
               
               <Route exact path="/refund" component={ withRouter(RefundPage) } />
+              <Route exact path="/terms-and-conditions" component={ withRouter(TermsPage) } />
           </Switch>
       </Fragment>
     )

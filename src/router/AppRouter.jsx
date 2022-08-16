@@ -13,6 +13,7 @@ import PortfolioPage from '../pages/PortfolioPage';
 import AboutPage from '../pages/AboutPage';
 import ArtworkPage from '../pages/ArtworkPage';
 import ContactPage from '../pages/ContactPage';
+import RefundPage from '../pages/RefundPage';
 
 class AppRouter extends Component {
   render() {
@@ -26,6 +27,8 @@ class AppRouter extends Component {
               <Route exact path="/about" component={ withRouter(AboutPage) } />
               <Route exact path="/artwork" component={ withRouter(ArtworkPage) } />
               <Route exact path="/contact" component={ withRouter(ContactPage) } />
+              
+              <Route exact path="/refund" component={ withRouter(RefundPage) } />
           </Switch>
       </Fragment>
     )

@@ -441,3 +441,11 @@ a.discord,
     color: #ffee00;
     font-size: 40px;
 }
+
+.refundSection > ul {
+    list-style: none;
+}
+
+.removeBullets {
+    list-style: none;
+}

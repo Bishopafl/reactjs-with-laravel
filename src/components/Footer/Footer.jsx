@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Nav, Row } from 'react-bootstrap';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 class Footer extends Component {
   render() {
@@ -65,7 +66,9 @@ class Footer extends Component {
                 <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-justify">
                     <h2 className='footerName'>Policy</h2>
                     <div className='d-grid footerLinks'>
-                      <a href="">Refund Policy</a>
+                      <Nav>
+                        <Nav.Link className='footerLink p-0' to="/refund" href="/refund">Refund Policy</Nav.Link>
+                      </Nav>
                       <a href="">Terms And Condition</a>
                       <a href="">Privacy Policy</a>
                     </div>

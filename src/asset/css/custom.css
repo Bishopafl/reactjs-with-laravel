@@ -384,7 +384,7 @@ a.discord,
     font-weight: 600;
 }
 
-.footerLinks > a {
+.footerLinks a {
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
@@ -392,7 +392,7 @@ a.discord,
     color: #fff;
 }
 
-.footerLinks > a:hover {
+.footerLinks a:hover {
     text-decoration: none;
     color: rgb(101, 134, 255);
 }

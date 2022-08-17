@@ -68,8 +68,8 @@ class Footer extends Component {
                       <Nav>
                         <Nav.Link className='footerLink p-0' to="/refund" href="/refund">Refund Policy</Nav.Link>
                         <Nav.Link className='footerLink p-0' to="/terms-and-conditions" href="/terms-and-conditions">Terms And Conditions</Nav.Link>
+                        <Nav.Link className='footerLink p-0' to="/privacy" href="/privacy">Privacy Policy</Nav.Link>
                       </Nav>
-                      <a href="">Privacy Policy</a>
                     </div>
                 </Col>
             </Row>

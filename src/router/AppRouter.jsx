@@ -15,6 +15,7 @@ import ArtworkPage from '../pages/ArtworkPage';
 import ContactPage from '../pages/ContactPage';
 import RefundPage from '../pages/RefundPage';
 import TermsPage from '../pages/TermsPage';
+import PrivacyPage from '../pages/PrivacyPage';
 
 class AppRouter extends Component {
   render() {
@@ -31,6 +32,7 @@ class AppRouter extends Component {
               
               <Route exact path="/refund" component={ withRouter(RefundPage) } />
               <Route exact path="/terms-and-conditions" component={ withRouter(TermsPage) } />
+              <Route exact path="/privacy" component={ withRouter(PrivacyPage) } />
           </Switch>
       </Fragment>
     )

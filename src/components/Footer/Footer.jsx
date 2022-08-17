@@ -7,6 +7,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 class Footer extends Component {
   render() {
@@ -56,20 +57,23 @@ class Footer extends Component {
                 <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-justify">
                     <h2 className='footerName'>Information</h2>
                     <div className='d-grid footerLinks'>
-                      <a href="">About Me</a>
-                      <a href="">My Profile</a>
-                      <a href="">Contact Us</a>
+                    <Nav defaultActiveKey="/" className="flex-column">
+                      <Nav.Link className='p-0' href="/">Home</Nav.Link>
+                      <Nav.Link className='p-0' href="/about">About Me</Nav.Link>
+                      <Nav.Link className='p-0' href="/artwork">Artwork</Nav.Link>
+                      <Nav.Link className='p-0' href="/contact">Contact Us</Nav.Link>
+                    </Nav>
                     </div>
                 </Col>
 
                 <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-justify">
                     <h2 className='footerName'>Policy</h2>
                     <div className='d-grid footerLinks'>
-                      <Nav>
-                        <Nav.Link className='footerLink p-0' to="/refund" href="/refund">Refund Policy</Nav.Link>
-                        <Nav.Link className='footerLink p-0' to="/terms-and-conditions" href="/terms-and-conditions">Terms And Conditions</Nav.Link>
-                        <Nav.Link className='footerLink p-0' to="/privacy" href="/privacy">Privacy Policy</Nav.Link>
-                      </Nav>
+                    <Nav className="flex-column">
+                      <Nav.Link className='p-0' href="/refund">Refund Policy</Nav.Link>
+                      <Nav.Link className='p-0' href="/terms-and-conditions">Terms And Conditions</Nav.Link>
+                      <Nav.Link className='p-0' href="/privacy">Privacy Policy</Nav.Link>
+                    </Nav>
                     </div>
                 </Col>
             </Row>

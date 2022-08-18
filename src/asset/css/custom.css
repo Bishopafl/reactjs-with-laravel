@@ -491,7 +491,7 @@ a.discord,
 }
 
 .intro-area--inner {
-    box-shadow: 0 0 30px rgb(0, 0, 0, 0.7);
+    box-shadow: 0 0 30px rgb(0, 0, 0, 0.3);
     background: #fff;
     padding: 50px 0 0;
     border-radius: 8px;
@@ -504,3 +504,22 @@ a.discord,
     font-size: 40px;
 }
 
+.welcomeLightBulbIcon {
+    width: 50%;
+    height: auto;
+    margin-top: -15px;
+}
+
+.welcomeFooter {
+    padding: 30px 30px 10px;
+    border-radius: 0 0 7px 7px;
+    background: #ffee00;
+
+}
+
+.welcomeIntro {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #051b35;
+    font-size: 16px;
+}

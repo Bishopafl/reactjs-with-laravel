@@ -24,7 +24,15 @@ class AllProjects extends Component {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Visit Site</Button>
+                            <Row>
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href="/adams-github" className='link-style' variant="outline-primary">Visit Site</Button>    
+                                </Col>
+
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href='/projectdetails' variant="primary">View More</Button>
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -38,7 +46,15 @@ class AllProjects extends Component {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Visit Site</Button>
+                            <Row>
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href="/adams-github" className='link-style' variant="outline-primary">Visit Site</Button>    
+                                </Col>
+
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href='/projectdetails' variant="primary">View More</Button>
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -52,7 +68,15 @@ class AllProjects extends Component {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Visit Site</Button>
+                            <Row>
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href="/adams-github" className='link-style' variant="outline-primary">Visit Site</Button>    
+                                </Col>
+
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href='/projectdetails' variant="primary">View More</Button>
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -66,7 +90,15 @@ class AllProjects extends Component {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Visit Site</Button>
+                            <Row>
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href="/adams-github" className='link-style' variant="outline-primary">Visit Site</Button>    
+                                </Col>
+
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href='/projectdetails' variant="primary">View More</Button>
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -80,7 +112,15 @@ class AllProjects extends Component {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Visit Site</Button>
+                            <Row>
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href="/adams-github" className='link-style' variant="outline-primary">Visit Site</Button>    
+                                </Col>
+
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href='/projectdetails' variant="primary">View More</Button>
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -94,7 +134,15 @@ class AllProjects extends Component {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Visit Site</Button>
+                            <Row>
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href="/adams-github" className='link-style' variant="outline-primary">Visit Site</Button>    
+                                </Col>
+
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href='/projectdetails' variant="primary">View More</Button>
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Card>
                 </Col>

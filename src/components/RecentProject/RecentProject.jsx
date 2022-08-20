@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Nav, Row } from 'react-bootstrap';
 import githubCatImage from '../../asset/image/github.gif';
 import atlantaChiroImage from '../../asset/image/atl-chiro.gif';
 import linkedInImage from '../../asset/image/linkedin.gif';
+import { Link, NavLink } from 'react-router-dom';
 
 class RecentProject extends Component {
   render() {
@@ -21,7 +22,16 @@ class RecentProject extends Component {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Visit Site</Button>
+                            <Row>
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href="/adams-github" className='link-style' variant="outline-primary">Visit Site</Button>    
+                                </Col>
+
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href='/projectdetails' variant="primary">View More</Button>
+                                </Col>
+                            </Row>
+                            
                         </Card.Body>
                     </Card>
                 </Col>
@@ -35,7 +45,15 @@ class RecentProject extends Component {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Visit Site</Button>
+                            <Row>
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href="/adams-github" variant="outline-primary">Visit Site</Button>    
+                                </Col>
+
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href='/projectdetails' variant="primary">View More</Button>
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -49,7 +67,15 @@ class RecentProject extends Component {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Visit Site</Button>
+                            <Row>
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href="/adams-github" variant="outline-primary">Visit Site</Button>    
+                                </Col>
+
+                                <Col lg={6} md={6} sm={6} xs={6}>
+                                    <Button href='/projectdetails' variant="primary">View More</Button>
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Card>
                 </Col>

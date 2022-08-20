@@ -16,6 +16,7 @@ import ContactPage from '../pages/ContactPage';
 import RefundPage from '../pages/RefundPage';
 import TermsPage from '../pages/TermsPage';
 import PrivacyPage from '../pages/PrivacyPage';
+import ProjectDetailsPage from '../pages/ProjectDetailsPage';
 
 class AppRouter extends Component {
   render() {
@@ -33,6 +34,15 @@ class AppRouter extends Component {
               <Route exact path="/refund" component={ withRouter(RefundPage) } />
               <Route exact path="/terms-and-conditions" component={ withRouter(TermsPage) } />
               <Route exact path="/privacy" component={ withRouter(PrivacyPage) } />
+              
+              <Route exact path="/projectdetails" component={ withRouter(ProjectDetailsPage) } />
+              
+              
+              {/* Cool ReactJS one-liner for routing to external links */}
+              <Route path='/adams-github' component={() => { 
+                  window.location.href = 'https://github.com/Bishopafl';
+                  return null;
+              }}/>
           </Switch>
       </Fragment>
     )

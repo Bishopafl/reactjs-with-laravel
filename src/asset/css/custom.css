@@ -523,3 +523,36 @@ a.discord,
     color: #051b35;
     font-size: 16px;
 }
+
+
+.after-shape:after {
+    content: "";
+    margin-right: 30px;
+    position: absolute;
+    left: 35%;
+    width: 145px;
+    height: 70%;
+    top: 600px;
+    border-radius: 10px;
+    background: #fdc800;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.projectDetailsText {
+    font-family: 'Montserrant', sans-serif;
+    font-weight: 700;
+    color: #051b35;
+    font-size: 40px;
+}
+
+.project-details {
+    margin-left: 35px;
+}
+
+.projectDetailsSubText {
+    color: #051b35;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Nav, Row } from 'react-bootstrap';
 import courseAngularMicroservice from '../../asset/image/courses/angular-laravel-microservice.jpeg';
 import courseAngularZeroToMastery from '../../asset/image/courses/angular-zero-to-mastery.jpeg';
 import courseThreeJs from '../../asset/image/courses/threejs.png';
@@ -25,7 +25,7 @@ class AllCourses extends Component {
                         <Col lg={6} md={6} sm={12}>
                             <h5 className='serviceName'>Angular 8 Full Stack</h5>
                             <p className='serviceDescription'>Breaking a monolith into microservices</p>
-                            <a href="#" className="courseViewMore">View Details</a>
+                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
                         </Col>
                     </Row>
                 </Col>
@@ -39,7 +39,7 @@ class AllCourses extends Component {
                         <Col lg={6} md={6} sm={12}>
                             <h5 className='serviceName'>Angular 8 </h5>
                             <p className='serviceDescription'>Zero to Mastery. Learn Angular.</p>
-                            <a href="#" className="courseViewMore">View Details</a>
+                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
                         </Col>
                     </Row>
                 </Col>
@@ -57,7 +57,7 @@ class AllCourses extends Component {
                         <Col lg={6} md={6} sm={12}>
                             <h5 className='serviceName'>Three JS</h5>
                             <p className='serviceDescription'>Implementing metaverse dimensions onto websites</p>
-                            <a href="#" className="courseViewMore">View Details</a>
+                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
                         </Col>
                     </Row>
                 </Col>
@@ -71,7 +71,7 @@ class AllCourses extends Component {
                         <Col lg={6} md={6} sm={12}>
                             <h5 className='serviceName'>ReactJS Full Stack</h5>
                             <p className='serviceDescription'>A - Z course with React JS front end with Laravel backend</p>
-                            <a href="#" className="courseViewMore">View Details</a>
+                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
                         </Col>
                     </Row>
                 </Col>
@@ -87,7 +87,7 @@ class AllCourses extends Component {
                         <Col lg={6} md={6} sm={12}>
                             <h5 className='serviceName'>Angular 8 Full Stack</h5>
                             <p className='serviceDescription'>Breaking a monolith into microservices</p>
-                            <a href="#" className="courseViewMore">View Details</a>
+                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
                         </Col>
                     </Row>
                 </Col>
@@ -101,7 +101,7 @@ class AllCourses extends Component {
                         <Col lg={6} md={6} sm={12}>
                             <h5 className='serviceName'>Angular 8 </h5>
                             <p className='serviceDescription'>Zero to Mastery. Learn Angular.</p>
-                            <a href="#" className="courseViewMore">View Details</a>
+                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
                         </Col>
                     </Row>
                 </Col>
@@ -119,7 +119,7 @@ class AllCourses extends Component {
                         <Col lg={6} md={6} sm={12}>
                             <h5 className='serviceName'>Three JS</h5>
                             <p className='serviceDescription'>Implementing metaverse dimensions onto websites</p>
-                            <a href="#" className="courseViewMore">View Details</a>
+                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
                         </Col>
                     </Row>
                 </Col>
@@ -133,7 +133,7 @@ class AllCourses extends Component {
                         <Col lg={6} md={6} sm={12}>
                             <h5 className='serviceName'>ReactJS Full Stack</h5>
                             <p className='serviceDescription'>A - Z course with React JS front end with Laravel backend</p>
-                            <a href="#" className="courseViewMore">View Details</a>
+                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
                         </Col>
                     </Row>
                 </Col>

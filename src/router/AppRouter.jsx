@@ -17,6 +17,7 @@ import RefundPage from '../pages/RefundPage';
 import TermsPage from '../pages/TermsPage';
 import PrivacyPage from '../pages/PrivacyPage';
 import ProjectDetailsPage from '../pages/ProjectDetailsPage';
+import CourseDetailsPage from '../pages/CourseDetailsPage';
 
 class AppRouter extends Component {
   render() {
@@ -36,6 +37,7 @@ class AppRouter extends Component {
               <Route exact path="/privacy" component={ withRouter(PrivacyPage) } />
               
               <Route exact path="/projectdetails" component={ withRouter(ProjectDetailsPage) } />
+              <Route exact path="/coursedetails" component={ withRouter(CourseDetailsPage) } />
               
               
               {/* Cool ReactJS one-liner for routing to external links */}

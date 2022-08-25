@@ -5,39 +5,33 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 const radarData = [
     {
       subject: 'PHP',
-      A: 110,
-      B: 110,
-      fullMark: 150,
+      A: 85,
+      fullMark: 100,
     },
     {
       subject: 'Javascript',
-      A: 98,
-      B: 130,
-      fullMark: 150,
+      A: 70,
+      fullMark: 100,
     },
     {
       subject: 'MySQL',
-      A: 86,
-      B: 130,
-      fullMark: 150,
+      A: 70,
+      fullMark: 100,
     },
     {
       subject: 'Laravel',
-      A: 99,
-      B: 100,
-      fullMark: 150,
+      A: 80,
+      fullMark: 100,
     },
     {
       subject: 'React',
-      A: 85,
-      B: 90,
-      fullMark: 150,
+      A: 70,
+      fullMark: 100,
     },
     {
       subject: 'Angular',
-      A: 98,
-      B: 85,
-      fullMark: 150,
+      A: 70,
+      fullMark: 100,
     },
   ];
 class Analysis extends Component {

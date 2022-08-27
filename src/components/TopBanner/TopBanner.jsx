@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import axios from 'axios';
+import HomeTopTitle from '../../RestAPI/AppUrl';
 
 class TopBanner extends Component {
 
   componentDidMount() {
-    axios.get('http://127.0.0.1:8000/api/homedata/title')
+    axios.get(HomeTopTitle)
     .then(function (response) {
       console.log(response.data);
     })

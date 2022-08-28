@@ -1,6 +1,7 @@
 class AppUrl {
   
-  static BaseURL = 'http://127.0.0.1:8000/api';
+  // static BaseURL = 'http://127.0.0.1:8000/api';
+  static BaseURL = 'https://portfolio.adamlopez.co/api';
 
   // Home page routes to backend Laravel API
   static TotalHomeDetails = this.BaseURL + '/homedata';

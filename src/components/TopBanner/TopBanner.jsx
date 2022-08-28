@@ -1,22 +1,28 @@
 import React, { Component, Fragment } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import axios from 'axios';
-import HomeTopTitle from '../../RestAPI/AppUrl';
+import AppUrl from '../../RestAPI/AppUrl';
+import RestClient from '../../RestAPI/RestClient';
 
 class TopBanner extends Component {
 
-  componentDidMount() {
-    axios.get(HomeTopTitle)
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  constructor() {
+    super();
+    this.state={
+      title:'',
+      subtitle:'',
+    }
   }
 
-
-
+  componentDidMount() {
+    RestClient.GetRequest(AppUrl.HomeTopTitle)
+    .then(result => {
+      this.setState({
+        title: result[0]['home_title'],
+        subtitle: result[0]['home_subtitle'],
+      });
+    });
+  }
 
   render() {
     return (
@@ -26,8 +32,8 @@ class TopBanner extends Component {
                 <Container className='topContent'>
                     <Row>
                         <Col className='text-center'>
-                            <h1 className='topTitle'>Adam Lopez | Software Engineer</h1>
-                            <h3 className='topSubTitle'>Understanding ReactJS from A - Z with Adam Lopez</h3>
+                            <h1 className='topTitle'>{ this.state.title }</h1>
+                            <h3 className='topSubTitle'>{ this.state.subtitle }</h3>
                             <Button variant='primary'>Learn More</Button>{' '}
                         </Col>
                     </Row>

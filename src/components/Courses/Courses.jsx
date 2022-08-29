@@ -5,9 +5,50 @@ import courseAngularZeroToMastery from '../../asset/image/courses/angular-zero-t
 import courseThreeJs from '../../asset/image/courses/threejs.png';
 import courseReactLaravel from '../../asset/image/courses/reactjs-laravel.png';
 import { Link } from 'react-router-dom';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class Courses extends Component {
+
+    constructor() {
+        super();
+        this.state={
+            courseData:[],
+        }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.CourseHome).then(result => {
+            this.setState({
+                courseData: result,
+            })
+        }).catch(error => {
+            this.setState({
+                courseData: '',
+            })
+        });
+    }
+
+
   render() {
+
+    const courseDataList = this.state.courseData;
+    const courseDataView = courseDataList.map(courseDataList => {
+        return <Col lg={6} md={12} sm={12}>
+            <Row>
+                <Col lg={6} md={6} sm={12} className='p-2'>
+                    <img className='courseImg' src={courseDataList.small_img} alt="" />
+                </Col>
+
+                <Col lg={6} md={6} sm={12}>
+                    <h5 className='serviceName'>{ courseDataList.short_title }</h5>
+                    <p className='serviceDescription'>{ courseDataList.short_description }</p>
+                    <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
+                </Col>
+            </Row>
+        </Col>
+    });
+
     return (
       <Fragment>
         <Container>
@@ -15,67 +56,9 @@ class Courses extends Component {
                 <h1 className="serviceMainTitle">Current Learnings</h1>
                 <div className="bottom"></div>
             </div>
-            
             <Row>
-                <Col lg={6} md={12} sm={12}>
-                    <Row>
-                        <Col lg={6} md={6} sm={12} className='p-2'>
-                            <img className='courseImg' src={courseAngularMicroservice} alt="" />
-                        </Col>
-
-                        <Col lg={6} md={6} sm={12}>
-                            <h5 className='serviceName'>Angular 8 Full Stack</h5>
-                            <p className='serviceDescription'>Breaking a monolith into microservices</p>
-                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
-                        </Col>
-                    </Row>
-                </Col>
-
-                <Col lg={6} md={12} sm={12}>
-                    <Row>
-                        <Col lg={6} md={6} sm={12} className='p-2'>
-                            <img className='courseImg' src={courseAngularZeroToMastery} alt="" />
-                        </Col>
-
-                        <Col lg={6} md={6} sm={12}>
-                            <h5 className='serviceName'>Angular 8 </h5>
-                            <p className='serviceDescription'>Zero to Mastery. Learn Angular.</p>
-                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
-                        </Col>
-                    </Row>
-                </Col>
+                { courseDataView }
             </Row>
-
-            <Row>
-                <Col lg={6} md={12} sm={12}>
-                    <Row>
-                        <Col lg={6} md={6} sm={12} className='p-2'>
-                            <img className='courseImg' src={courseThreeJs} alt="" />
-                        </Col>
-
-                        <Col lg={6} md={6} sm={12}>
-                            <h5 className='serviceName'>Three JS</h5>
-                            <p className='serviceDescription'>Implementing metaverse dimensions onto websites</p>
-                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
-                        </Col>
-                    </Row>
-                </Col>
-
-                <Col lg={6} md={12} sm={12}>
-                    <Row>
-                        <Col lg={6} md={6} sm={12} className='p-2'>
-                            <img className='courseImg' src={courseReactLaravel} alt="" />
-                        </Col>
-
-                        <Col lg={6} md={6} sm={12}>
-                            <h5 className='serviceName'>ReactJS Full Stack</h5>
-                            <p className='serviceDescription'>A - Z course with React JS front end with Laravel backend</p>
-                            <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-
         </Container>
       </Fragment>
     )

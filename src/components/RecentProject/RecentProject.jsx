@@ -33,8 +33,6 @@ class RecentProject extends Component {
 
     const MyList = this.state.projectData;
 
-    console.log(MyList);
-
     const MyView = MyList.map(MyList => {
         return  <Col lg={4} md={6} sm={12}>
         <Card className='projectCard'>
@@ -45,26 +43,16 @@ class RecentProject extends Component {
                 <Stack direction="vertical" gap={1}>
                     <Card.Title className='serviceName'>{ MyList.project_name }</Card.Title>
                     <Card.Text className='serviceDescription'>{ MyList.project_description }</Card.Text>
-
-
-
                     <Row>
-                    <Col lg={6} md={6} sm={6} xs={6}>
-                        <Button href={MyList.live_preview} className='link-style' variant="outline-primary">Visit Site</Button>    
-                    </Col>
+                        <Col lg={6} md={6} sm={6} xs={6}>
+                            <Button href={MyList.live_preview} className='link-style' variant="outline-primary">Visit Site</Button>    
+                        </Col>
 
-                    <Col lg={6} md={6} sm={6} xs={6}>
-                        <Button href='/projectdetails' variant="primary">View More</Button>
-                    </Col>
+                        <Col lg={6} md={6} sm={6} xs={6}>
+                            <Button href='/projectdetails' variant="primary">View More</Button>
+                        </Col>
                     </Row>
-
                 </Stack>
-
-                
-                    
-                
-                
-                
             </Card.Body>
         </Card>
     </Col>

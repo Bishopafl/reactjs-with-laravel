@@ -1,84 +1,84 @@
 import React, { Component, Fragment } from 'react';
-import { Button, Card, Col, Container, Nav, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Nav, Row, Stack } from 'react-bootstrap';
 import githubCatImage from '../../asset/image/github.gif';
 import atlantaChiroImage from '../../asset/image/atl-chiro.gif';
 import linkedInImage from '../../asset/image/linkedin.gif';
 import { Link, NavLink } from 'react-router-dom';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class RecentProject extends Component {
+  
+    constructor() {
+        super();
+        this.state={
+          projectData: [],
+        }
+      }
+    
+      componentDidMount() {
+        RestClient.GetRequest(AppUrl.ProjectHome).then(result => {
+          this.setState({
+            projectData: result
+          }).catch(error => {
+            this.setState({
+              projectData: '',
+            })
+          });
+        });
+      }
+
+
   render() {
+
+    const MyList = this.state.projectData;
+
+    console.log(MyList);
+
+    const MyView = MyList.map(MyList => {
+        return  <Col lg={4} md={6} sm={12}>
+        <Card className='projectCard'>
+            
+            <Card.Img className='projectCardImg' src={ MyList.card_img } />
+
+            <Card.Body className='projectCardBody'>
+                <Stack direction="vertical" gap={1}>
+                    <Card.Title className='serviceName'>{ MyList.project_name }</Card.Title>
+                    <Card.Text className='serviceDescription'>{ MyList.project_description }</Card.Text>
+
+
+
+                    <Row>
+                    <Col lg={6} md={6} sm={6} xs={6}>
+                        <Button href={MyList.live_preview} className='link-style' variant="outline-primary">Visit Site</Button>    
+                    </Col>
+
+                    <Col lg={6} md={6} sm={6} xs={6}>
+                        <Button href='/projectdetails' variant="primary">View More</Button>
+                    </Col>
+                    </Row>
+
+                </Stack>
+
+                
+                    
+                
+                
+                
+            </Card.Body>
+        </Card>
+    </Col>
+    })
+
     return (
       <Fragment>
         <Container className='text-center'>
             <h1 className='seviceMainTitle'>Recent Projects</h1>
             <div className='bottom'></div>
             <Row>
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='projectCard'>
-                        <Card.Img className='githubCatCard' />
-                        <Card.Body>
-                            <Card.Title className='serviceName'>Card Title</Card.Title>
-                            <Card.Text className='serviceDescription'>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                            </Card.Text>
-                            <Row>
-                                <Col lg={6} md={6} sm={6} xs={6}>
-                                    <Button href="/adams-github" className='link-style' variant="outline-primary">Visit Site</Button>    
-                                </Col>
 
-                                <Col lg={6} md={6} sm={6} xs={6}>
-                                    <Button href='/projectdetails' variant="primary">View More</Button>
-                                </Col>
-                            </Row>
-                            
-                        </Card.Body>
-                    </Card>
-                </Col>
-
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='projectCard'>
-                        <Card.Img variant="top" style={{height: '200px'}} src={atlantaChiroImage} />
-                        <Card.Body>
-                            <Card.Title className='serviceName'>Card Title</Card.Title>
-                            <Card.Text className='serviceDescription'>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                            </Card.Text>
-                            <Row>
-                                <Col lg={6} md={6} sm={6} xs={6}>
-                                    <Button href="/adams-github" variant="outline-primary">Visit Site</Button>    
-                                </Col>
-
-                                <Col lg={6} md={6} sm={6} xs={6}>
-                                    <Button href='/projectdetails' variant="primary">View More</Button>
-                                </Col>
-                            </Row>
-                        </Card.Body>
-                    </Card>
-                </Col>
-
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='projectCard'>
-                        <Card.Img variant="top" style={{height: '200px'}} src={linkedInImage} />
-                        <Card.Body>
-                            <Card.Title className='serviceName'>Card Title</Card.Title>
-                            <Card.Text className='serviceDescription'>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                            </Card.Text>
-                            <Row>
-                                <Col lg={6} md={6} sm={6} xs={6}>
-                                    <Button href="/adams-github" variant="outline-primary">Visit Site</Button>    
-                                </Col>
-
-                                <Col lg={6} md={6} sm={6} xs={6}>
-                                    <Button href='/projectdetails' variant="primary">View More</Button>
-                                </Col>
-                            </Row>
-                        </Card.Body>
-                    </Card>
-                </Col>
+                {MyView}
+               
             </Row>
         </Container>
       </Fragment>

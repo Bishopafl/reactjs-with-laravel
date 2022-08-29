@@ -203,6 +203,15 @@
     border: 2px solid black;
 }
 
+.projectCardImg {
+    height: 300px !important;
+}
+
+.projectCardBody {
+    height: 260px;
+}
+
+
 .githubCatCard {
     background-image: url("../image/github.gif");
     height: 200px;

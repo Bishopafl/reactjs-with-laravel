@@ -1,15 +1,57 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment } from 'react';
 import { Col, Container, Nav, Row } from 'react-bootstrap';
-import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import ListGroup from 'react-bootstrap/ListGroup';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class Footer extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      address : '.....',
+      email : '.....',
+      phone : '.....',
+      socialOne: '....',
+      socialTwo: '....',
+      socialThree: '....',
+      credits : '.....',
+    }
+  }
+
+  componentDidMount() {
+    RestClient.GetRequest(AppUrl.FooterDataAll).then(result => {
+      console.log(result[0]);
+      this.setState({
+        address : result[0].address,
+        email : result[0].email,
+        phone : result[0].phone,
+        socialOne : result[0]['social-one'],
+        socialTwo : result[0]['social-two'],
+        socialThree : result[0]['social-three'],
+        credits : result[0].footer_credits,
+      })
+    }).catch(error => {
+      this.setState({
+        address : '????',
+        email : '????',
+        phone : '????',
+        socialOne: '....',
+        socialTwo: '....',
+        socialThree: '....',
+        credits : '????',
+      })
+    })
+  }
+
+
   render() {
     return (
       <Fragment>
@@ -18,19 +60,19 @@ class Footer extends Component {
                 <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-center">
                     <h2 className='footerName text-center'>Follow Us</h2>
                     <div className="socialContainer">
-                      <a href="#" className='github social'>
+                      <a href={this.state.socialOne} className='social'>
                         <FontAwesomeIcon 
                           icon={ faGithub }
                           size='2x'
                         ></FontAwesomeIcon>
                       </a>
-                      <a href="#" className='discord social'>
+                      <a href={this.state.socialTwo} className='social'>
                         <FontAwesomeIcon 
-                          icon={ faDiscord }
+                          icon={ faInstagram }
                           size='2x'
                         ></FontAwesomeIcon>
                       </a>
-                      <a href="#" className='linkedin social'>
+                      <a href={this.state.socialThree} className='social'>
                         <FontAwesomeIcon 
                           icon={ faLinkedin }
                           size='2x'
@@ -43,13 +85,13 @@ class Footer extends Component {
                     <h2 className='footerName'>Address</h2>
                     <div className='footerDescription d-grid'>
                       <span>
-                        <FontAwesomeIcon icon={faMapLocationDot} /> Tampa, Florida
+                        <FontAwesomeIcon icon={faMapLocationDot} /> { this.state.address }
                       </span>
                       <span>
-                        <FontAwesomeIcon icon={faEnvelope} /> Email: adamf04@gmail.com
+                        <FontAwesomeIcon icon={faEnvelope} /> Email: { this.state.email }
                       </span>
                       <span>
-                        <FontAwesomeIcon icon={faPhone} /> Phone: 8135008808
+                        <FontAwesomeIcon icon={faPhone} /> Phone: { this.state.phone }
                       </span>
                     </div>
                 </Col>
@@ -80,7 +122,7 @@ class Footer extends Component {
         </Container>
 
         <Container fluid={true} className='text-center copyrightSection'>
-          <a className='copyrightLink' href="#">Copyright 2015 by Adam Lopez, All Rights Reserved</a>
+          <a className='copyrightLink' href="#">{ this.state.credits }</a>
         </Container>
       </Fragment>
     )

@@ -32,6 +32,8 @@ class AppUrl {
   static ClientReviewsAll = this.BaseURL + '/clientreviewdata';
   // Chart Data
   static ChartDataAll = this.BaseURL + '/chartdata';
+  // Footer Data
+  static FooterDataAll = this.BaseURL + '/footerdata';
 
 }
 

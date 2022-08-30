@@ -4,8 +4,37 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import React, { Component, Fragment } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class ContactUs extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      address : '.....',
+      email : '.....',
+      phone : '.....',
+    }
+  }
+
+  componentDidMount() {
+    RestClient.GetRequest(AppUrl.FooterDataAll).then(result => {
+      console.log(result[0]);
+      this.setState({
+        address : result[0].address,
+        email : result[0].email,
+        phone : result[0].phone,
+      })
+    }).catch(error => {
+      this.setState({
+        address : '????',
+        email : '????',
+        phone : '????',
+      })
+    })
+  }
+
   render() {
     return (
       <Fragment>
@@ -36,13 +65,13 @@ class ContactUs extends Component {
                     <h1 className='serviceName'>Discuss with Us</h1>
                     <div className='serviceDescription d-grid'>
                       <span>
-                        <FontAwesomeIcon icon={faMapLocationDot} /> Tampa, Florida
+                        <FontAwesomeIcon icon={faMapLocationDot} /> {this.state.address}
                       </span>
                       <span>
-                        <FontAwesomeIcon icon={faEnvelope} /> Email: adamf04@gmail.com
+                        <FontAwesomeIcon icon={faEnvelope} /> Email: {this.state.email}
                       </span>
                       <span>
-                        <FontAwesomeIcon icon={faPhone} /> Phone: 8135008808
+                        <FontAwesomeIcon icon={faPhone} /> Phone: {this.state.phone}
                       </span>
                     </div>
                 </Col>

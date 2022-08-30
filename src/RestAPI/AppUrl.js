@@ -16,6 +16,7 @@ class AppUrl {
   static Services = this.BaseURL + '/servicedata';
   // Information Routes
   static AllInformation = this.BaseURL + '/informationdata';
+  static AboutInformation = this.BaseURL + '/informationdata/about';
   static RefundInformation = this.BaseURL + '/informationdata/refund';
   static TermsInformation = this.BaseURL + '/informationdata/terms';
   static PrivacyInformation = this.BaseURL + '/informationdata/privacy';

@@ -28,12 +28,7 @@ class AboutDescription extends Component {
 
 
   render() {
-
     const aboutData = this.state.aboutDesc;
-    console.log(aboutData);
-
-    
-
     return (
       <Fragment>
         <Container className='mt-5'>

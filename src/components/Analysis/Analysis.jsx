@@ -1,86 +1,80 @@
 import React, { Component, Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import AppUrl from '../../RestAPI/AppUrl';
+import RestClient from '../../RestAPI/RestClient';
+import parse from 'html-react-parser';
 
-const radarData = [
-    {
-      subject: 'PHP',
-      A: 85,
-      fullMark: 100,
-    },
-    {
-      subject: 'Javascript',
-      A: 70,
-      fullMark: 100,
-    },
-    {
-      subject: 'MySQL',
-      A: 70,
-      fullMark: 100,
-    },
-    {
-      subject: 'Laravel',
-      A: 80,
-      fullMark: 100,
-    },
-    {
-      subject: 'React',
-      A: 70,
-      fullMark: 100,
-    },
-    {
-      subject: 'Angular',
-      A: 70,
-      fullMark: 100,
-    },
-  ];
 class Analysis extends Component {
 
     constructor() {
         super();
         this.state={
-            data: radarData
+            chartData: [],
+            techDesc: "..."
         }
     }
 
+    componentDidMount() {
+      RestClient.GetRequest(AppUrl.ChartDataAll).then(result => {
+        this.setState({
+          chartData: result
+        })
+      }).catch(error => {
+        this.setState({
+          chartData: []
+        })
+      });
+
+      RestClient.GetRequest(AppUrl.HomeTechDescription).then(result => {
+        this.setState({techDesc: result[0]['tech_description']});
+      })
+    }
+
     render() {
-        return (
-            <Fragment>
-            <Container>
-                <div className='text-center'>
-                <h1 className='serviceMainTitle'>Technology Used</h1>
-                </div>
-                <div className='bottom'></div>
-                <Row>
-                    <Col lg={6} md={12} sm={12}>
-                        <ResponsiveContainer width={400} height={300}>
 
-                            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={this.state.data}>
-                            <PolarGrid />
-                            <PolarAngleAxis dataKey="subject" />
-                            <PolarRadiusAxis />
-                            <Radar name="Lopez Marketing" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-                            </RadarChart>
+      const chartDataAll = this.state.chartData;
+      const chartDataArray = [];
 
-                        </ResponsiveContainer>
+      chartDataAll.map(chartDataAll => {
+        const chartDataObject = {
+          'subject': chartDataAll.subject_title,
+          'A' : chartDataAll.subject_knowledge,
+          'fullMark' : chartDataAll.subject_total_knowledge,
+        }
+        chartDataArray.push({...chartDataObject});
+      });
+
+      return (
+        <Fragment>
+          <Container>
+              <div className='text-center'>
+              <h1 className='serviceMainTitle'>Technology Used</h1>
+              </div>
+              <div className='bottom'></div>
+              <Row>
+                  <Col lg={6} md={12} sm={12}>
+                      <ResponsiveContainer width={400} height={300}>
+
+                          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartDataArray}>
+                          <PolarGrid />
+                          <PolarAngleAxis dataKey="subject" />
+                          <PolarRadiusAxis />
+                          <Radar name="Lopez Marketing" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                          </RadarChart>
+
+                      </ResponsiveContainer>
 
 
-                    </Col>
+                  </Col>
 
-                    <Col lg={6} md={12} sm={12}>
-                        <p className='text-justify serviceDescription'>First I would like to thank you for visiting my site today. I have been doing web design and development since October 2015.
-                        <br /><br />
-                        After graduating from Ironhack, a coding bootcamp in Miami, Florida, I took the skills gain learning full stack development.
-                        <br /><br />
-                        It was an exciting and challenging experience for me, especially due to my decision to make a complete career change.
-                        <br /><br />
-                        Looking back on these last years, I am grateful to the teachers and students that have taught me lessons on how to be a better developer and a better person.
-                        </ p>
-                    </Col>
-                </Row>
-            </Container>
-            </Fragment>
-        )
+                  <Col lg={6} md={12} sm={12}>
+                      <p className='text-justify serviceDescription'>{ parse(this.state.techDesc) }</ p>
+                  </Col>
+              </Row>
+          </Container>
+        </Fragment>
+      )
     }
 }
 

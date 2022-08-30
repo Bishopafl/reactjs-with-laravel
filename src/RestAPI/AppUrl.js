@@ -20,6 +20,8 @@ class AppUrl {
   static TermsInformation = this.BaseURL + '/informationdata/terms';
   static PrivacyInformation = this.BaseURL + '/informationdata/privacy';
   // Artwork route
+  static ArtworkAll = this.BaseURL + '/artworkdata';
+  // Course Route
   static CourseAll = this.BaseURL + '/course/all';
   static CourseHome = this.BaseURL + '/course/home';
   static CourseDetails = this.BaseURL + '/course/details';

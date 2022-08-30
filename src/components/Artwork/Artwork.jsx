@@ -1,58 +1,40 @@
 import React, { Component, Fragment } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import PhotoAlbum from 'react-photo-album';
-
-const photos = [
-    {
-        src: 'http://via.placeholder.com/640x360',
-        width: 780,
-        height: 600
-    },
-    {
-        src: 'http://via.placeholder.com/640x360',
-        width: 500,
-        height: 600
-    },
-    {
-        src: 'http://via.placeholder.com/640x360',
-        width: 900,
-        height: 500
-    },
-    {
-        src: 'http://via.placeholder.com/640x360',
-        width: 1080,
-        height: 700
-    },
-    {
-        src: 'http://via.placeholder.com/640x360',
-        width: 500,
-        height: 600
-    },
-    {
-        src: 'http://via.placeholder.com/640x360',
-        width: 500,
-        height: 600
-    },
-    {
-        src: 'http://via.placeholder.com/640x360',
-        width: 500,
-        height: 600
-    },
-    {
-        src: 'http://via.placeholder.com/640x360',
-        width: 1080,
-        height: 900
-    },
-    {
-        src: 'http://via.placeholder.com/640x360',
-        width: 300,
-        height: 300
-    }
-
-]
+import AppUrl from '../../RestAPI/AppUrl';
+import RestClient from '../../RestAPI/RestClient';
 
 class Artwork extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            artworkData: [],
+        }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.ArtworkAll).then(result => {
+            this.setState({
+                artworkData: result
+            })
+        }).catch(error => {
+            this.setState({
+                artworkData: ''
+            })
+        })
+    }
+
   render() {
+
+    const artworkDataList = this.state.artworkData;
+    const artworkPhotoArray = [];
+
+    artworkDataList.map(artworkDataList => {
+        const artworkObject = {'src': artworkDataList.artwork_path, 'width': artworkDataList.width, 'height': artworkDataList.height};
+        artworkPhotoArray.push( artworkObject );
+    });
+
     return (
       <Fragment>
         <Container>
@@ -62,7 +44,7 @@ class Artwork extends Component {
             </div>
             <Row>
                 <Col lg={12} md={12} sm={12}>
-                    <PhotoAlbum layout="columns" photos={photos} />
+                    <PhotoAlbum layout="columns" photos={artworkPhotoArray} />
                 </Col>
             </Row>
         </Container>

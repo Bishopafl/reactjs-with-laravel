@@ -19,11 +19,11 @@ class Services extends Component {
     RestClient.GetRequest(AppUrl.Services).then(result => {
       this.setState({
         serviceData: result
-      }).catch(error => {
-        this.setState({
-          serviceData: '',
-        })
-      });
+      })
+    }).catch(error => {
+      this.setState({
+        serviceData: '',
+      })
     });
   }
 

@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideoSlash } from '@fortawesome/free-solid-svg-icons';
 import 'video-react/dist/video-react.css';
 import { BigPlayButton, Player } from 'video-react';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
+import parse from 'html-react-parser';
 
 class Video extends Component {
 
@@ -11,14 +14,28 @@ class Video extends Component {
         super();
         this.state = {
             show: false,
+            video_description: '',
+            video_url: '',
         }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.HomeVideo).then(result => {
+            this.setState({
+                video_description: result[0].video_description,
+                video_url: result[0].video_url,
+            })
+        }).catch(error => {
+            this.setState({
+                video_description: '???',
+                video_url: '',
+            })
+        })
     }
 
     // two variables thats function is to set the state of the modal
     modalClose = () => this.setState({ show: false });
     modalOpen = () => this.setState({ show: true });
-
-
 
   render() {
     return (
@@ -30,15 +47,9 @@ class Video extends Component {
             </div>
             <Row>
                 <Col lg={6} md={6} sm={12} className='videoText'>
-                    <p className='serviceDescription text-start'>
-                        First I would like to thank you for visiting my site today. I have been doing web design and development since October 2015.
-                        <br /><br />
-                        After graduating from Ironhack, a coding bootcamp in Miami, Florida, I took the skills gain learning full stack development.
-                        <br /><br />
-                        It was an exciting and challenging experience for me, especially due to my decision to make a complete career change.
-                        <br /><br />
-                        Looking back on these last years, I am grateful to the teachers and students that have taught me lessons on how to be a better developer and a better person.
-                    </p>
+                    <div className='serviceDescription text-start'>
+                        { parse(this.state.video_description) }
+                    </div>
                 </Col>
 
                 <Col lg={6} md={6} sm={12} className='videoCard'>
@@ -49,7 +60,7 @@ class Video extends Component {
 
         <Modal size='lg' show={this.state.show} onHide={this.modalClose}>
             <Modal.Body>
-                <Player src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
+                <Player src={ this.state.video_url} >
                     <BigPlayButton position="center" />
                 </Player>
             </Modal.Body>

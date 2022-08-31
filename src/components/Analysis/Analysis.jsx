@@ -54,9 +54,9 @@ class Analysis extends Component {
               <div className='bottom'></div>
               <Row>
                   <Col lg={6} md={12} sm={12}>
-                      <ResponsiveContainer width={400} height={300}>
+                      <ResponsiveContainer>
 
-                          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartDataArray}>
+                          <RadarChart outerRadius="80%" data={chartDataArray}>
                           <PolarGrid />
                           <PolarAngleAxis dataKey="subject" />
                           <PolarRadiusAxis />

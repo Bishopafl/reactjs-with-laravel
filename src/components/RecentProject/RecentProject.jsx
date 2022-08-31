@@ -18,13 +18,13 @@ class RecentProject extends Component {
     
       componentDidMount() {
         RestClient.GetRequest(AppUrl.ProjectHome).then(result => {
-          this.setState({
-            projectData: result
-          }).catch(error => {
+             this.setState({
+              projectData: result
+            });
+          }).catch(error => { 
             this.setState({
               projectData: '',
-            })
-          });
+            });
         });
       }
 

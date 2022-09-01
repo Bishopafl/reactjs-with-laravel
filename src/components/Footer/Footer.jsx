@@ -28,7 +28,6 @@ class Footer extends Component {
 
   componentDidMount() {
     RestClient.GetRequest(AppUrl.FooterDataAll).then(result => {
-      console.log(result[0]);
       this.setState({
         address : result[0].address,
         email : result[0].email,

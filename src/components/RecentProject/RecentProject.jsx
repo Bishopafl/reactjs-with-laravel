@@ -10,23 +10,23 @@ import AppUrl from '../../RestAPI/AppUrl';
 class RecentProject extends Component {
   
     constructor() {
-        super();
-        this.state={
-          projectData: [],
-        }
+      super();
+      this.state={
+        projectData: [],
       }
+    }
     
-      componentDidMount() {
-        RestClient.GetRequest(AppUrl.ProjectHome).then(result => {
-             this.setState({
-              projectData: result
-            });
-          }).catch(error => { 
+    componentDidMount() {
+      RestClient.GetRequest(AppUrl.ProjectHome).then(result => {
             this.setState({
-              projectData: '',
-            });
-        });
-      }
+            projectData: result
+          });
+        }).catch(error => { 
+          this.setState({
+            projectData: '',
+          });
+      });
+    }
 
 
   render() {

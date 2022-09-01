@@ -3,6 +3,7 @@ import TopNavigation from '../components/TopNavigation/TopNavigation';
 import PageTop from '../components/PageTop/PageTop';
 import Services from '../components/Services/Services';
 import Footer from '../components/Footer/Footer';
+import ContactUs from '../components/ContactUs/ContactUs';
 
 class AllServicesPage extends Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ class AllServicesPage extends Component {
         <TopNavigation title='Our Services' />
         <PageTop pageTitle="Our Services" />
         <Services />
+        <ContactUs />
         <Footer />
       </Fragment>
     )

@@ -35,6 +35,21 @@ class ContactUs extends Component {
     })
   }
 
+  sendContact() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
+
+    const jsonObject = {name: name, email: email, message: message};
+
+    RestClient.PostRequest(AppUrl.ContactSend, JSON.stringify(jsonObject)).then(result => {
+      alert(result)
+    }).catch(error => {
+      alert('error bruh... bummer.');
+    });
+
+  }
+
   render() {
     return (
       <Fragment>
@@ -44,18 +59,15 @@ class ContactUs extends Component {
                     <h1 className='serviceName'>Quick Connect</h1>
                     <Form>
                         <Form.Group className='pb-3'>
-                            <Form.Label className="text-muted">Type your Name</Form.Label>
-                            <Form.Control column='sm' type="name" placeholder="Enter Your Name" />
-                        </Form.Group>
-                        <Form.Group >
-                            <Form.Label className="text-muted">Type your Email</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control id="name" column='sm' type="name" placeholder="Enter Your Name" />
                         </Form.Group>
                         <Form.Group className='pb-3'>
-                            <Form.Label className="text-muted">Type your Message</Form.Label>
-                            <Form.Control rows={3} as="textarea" placeholder="Enter Your Message" />
+                            <Form.Control id="email" type="email" placeholder="Enter email" />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Form.Group className='pb-3'>
+                            <Form.Control id="message" rows={3} as="textarea" placeholder="Enter Your Message" />
+                        </Form.Group>
+                        <Button onClick={(this.sendContact)} variant="primary">
                             Submit
                         </Button>
                     </Form>

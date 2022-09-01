@@ -1,8 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import cloudnetworkIcon from '../../asset/image/cloud-network.gif';
-import barchartIcon from '../../asset/image/bar-chart.gif';
-import internetIcon from '../../asset/image/internet.gif';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 

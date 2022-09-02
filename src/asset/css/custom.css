@@ -537,10 +537,10 @@ a.social:hover {
     content: "";
     margin-right: 30px;
     position: absolute;
-    left: 35%;
-    width: 145px;
-    height: 70%;
-    top: 600px;
+    left: 42%;
+    width: 15%;
+    height: 45%;
+    top: 580px;
     border-radius: 10px;
     background: #fdc800;
     z-index: -1;
@@ -555,7 +555,11 @@ a.social:hover {
 }
 
 .project-details {
-    margin-left: 35px;
+    margin-left: 30%;
+}
+
+.projectImgContainer {
+    width: 100%;
 }
 
 .projectDetailsSubText {

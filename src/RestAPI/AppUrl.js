@@ -11,7 +11,7 @@ class AppUrl {
   // Project details routes
   static ProjectAll = this.BaseURL + '/projectdata';
   static ProjectHome = this.BaseURL + '/projectdata/home';
-  static ProjectDetails = this.BaseURL + '/projectdata/details';
+  static ProjectDetails = this.BaseURL + '/projectdata/details/';
   // Service route
   static Services = this.BaseURL + '/servicedata';
   // Information Routes

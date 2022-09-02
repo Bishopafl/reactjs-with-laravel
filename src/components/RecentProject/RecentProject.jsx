@@ -31,25 +31,25 @@ class RecentProject extends Component {
 
   render() {
 
-    const MyList = this.state.projectData;
+    const projectDataList = this.state.projectData;
 
-    const MyView = MyList.map(MyList => {
+    const projectDetailsView = projectDataList.map(projectDataList => {
         return  <Col lg={4} md={6} sm={12}>
         <Card className='projectCard'>
             
-            <Card.Img className='projectCardImg' src={ MyList.card_img } />
+            <Card.Img className='projectCardImg' src={ projectDataList.card_img } />
 
             <Card.Body className='projectCardBody'>
                 <Stack direction="vertical" gap={1}>
-                    <Card.Title className='serviceName'>{ MyList.project_name }</Card.Title>
-                    <Card.Text className='serviceDescription'>{ MyList.project_description }</Card.Text>
+                    <Card.Title className='serviceName'>{ projectDataList.project_name }</Card.Title>
+                    <Card.Text className='serviceDescription'>{ projectDataList.project_description }</Card.Text>
                     <Row>
                         <Col lg={6} md={6} sm={6} xs={6}>
-                            <Button href={MyList.live_preview} className='link-style' variant="outline-primary">Visit Site</Button>    
+                            <Button href={projectDataList.live_preview} className='link-style' variant="outline-primary">Visit Site</Button>    
                         </Col>
 
                         <Col lg={6} md={6} sm={6} xs={6}>
-                            <Button href='/projectdetails' variant="primary">View More</Button>
+                            <Button href={ '/projectdetails/' + projectDataList.id+"/"+projectDataList.project_name} variant="primary">View More</Button>
                         </Col>
                     </Row>
                 </Stack>
@@ -65,7 +65,7 @@ class RecentProject extends Component {
             <div className='bottom'></div>
             <Row>
 
-                {MyView}
+                {projectDetailsView}
                
             </Row>
         </Container>

@@ -11,6 +11,15 @@ import 'video-react/dist/video-react.cjs'
 import { BigPlayButton, Player } from 'video-react'
 
 class CourseDetails extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      // courseDetails
+    }
+  }
+
+
   render() {
     return (
       <Fragment>

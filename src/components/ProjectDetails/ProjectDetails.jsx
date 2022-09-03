@@ -6,6 +6,7 @@ import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import HTMLReactParser from 'html-react-parser';
+import Loading from '../Loading/Loading';
 
 class ProjectDetails extends Component {
 
@@ -18,6 +19,7 @@ class ProjectDetails extends Component {
       projectDescription: '',
       projectFeatures: '',
       livePreview: '',
+      loading: true,
     }
   }
 
@@ -29,42 +31,48 @@ class ProjectDetails extends Component {
         projectDescription: result[0]['project_description'],
         projectFeatures: result[0]['project_features'],
         livePreview: result[0]['live_preview'],
+        loading: false,
       })
     })
   }
 
   render() {
-    return (
-      <Fragment>
-        <Container className='mt-5'>
-            <Row>
-                <Col xl={6} lg={6} md={6} sm={12} xs={12}>
-                    <div className="project-details-thumb-wrap after-shape">
-                        <div className='projectImgContainer'>
-                          <img width={500} src={this.state.projectImg} alt="" />  
-                        </div>
-                        
-                    </div>
-                </Col>
+    if (this.state.loading == true) {
+       return <Loading />
+    } else {
 
-                <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mt-5">
-                    <div className='project-details'>
-                        <h1 className='projectDetailsText'>{this.state.projectName}</h1>
-                        <p className='projectDetailsSubText'>{ HTMLReactParser(this.state.projectDescription) }</p>
+      return (
+        <Fragment>
+          <Container className='mt-5'>
+              <Row>
+                  <Col xl={6} lg={6} md={6} sm={12} xs={12}>
+                      <div className="project-details-thumb-wrap after-shape">
+                          <div className='projectImgContainer'>
+                            <img width={500} src={this.state.projectImg} alt="" />  
+                          </div>
+                          
+                      </div>
+                  </Col>
+
+                  <Col xl={6} lg={6} md={6} sm={12} xs={12} className="mt-5">
+                      <div className='project-details'>
+                          <h1 className='projectDetailsText'>{this.state.projectName}</h1>
+                          <p className='projectDetailsSubText'>{ HTMLReactParser(this.state.projectDescription) }</p>
 
 
-                        <p className="cardSubTitle text-start"><FontAwesomeIcon className='iconBullet' icon={faCheckSquare} /> 
-                        {HTMLReactParser(this.state.projectFeatures)}
-                        </p>
+                          <p className="cardSubTitle text-start"><FontAwesomeIcon className='iconBullet' icon={faCheckSquare} /> 
+                          {HTMLReactParser(this.state.projectFeatures)}
+                          </p>
 
-                        <Button variant="info" href={this.state.livePreview} >Live Preview</Button>
+                          <Button variant="info" href={this.state.livePreview} >Live Preview</Button>
 
-                    </div>
-                </Col>
-            </Row>
-        </Container>
-      </Fragment>
-    )
+                      </div>
+                  </Col>
+              </Row>
+          </Container>
+        </Fragment>
+      )
+    } // end else
   }
 }
 

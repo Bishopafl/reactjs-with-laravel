@@ -41,7 +41,7 @@ class AllCourses extends Component {
                 <Col lg={6} md={6} sm={12}>
                     <h5 className='serviceName'>Angular 8 Full Stack</h5>
                     <p className='serviceDescription'>Breaking a monolith into microservices</p>
-                    <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
+                    <Nav.Link className='courseViewMore' href={'/coursedetails/'+allCoursesList.id+'/'+allCoursesList.short_title}>View Details</Nav.Link>
                 </Col>
             </Row>
         </Col>

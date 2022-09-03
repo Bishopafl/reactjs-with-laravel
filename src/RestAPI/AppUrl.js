@@ -25,7 +25,7 @@ class AppUrl {
   // Course Route
   static CourseAll = this.BaseURL + '/course/all';
   static CourseHome = this.BaseURL + '/course/home';
-  static CourseDetails = this.BaseURL + '/course/details';
+  static CourseDetails = this.BaseURL + '/course/details/';
   // Contact form route
   static ContactSend = this.BaseURL + '/contactsend';
   // Client Reviews route

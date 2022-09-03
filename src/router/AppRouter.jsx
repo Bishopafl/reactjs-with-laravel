@@ -37,7 +37,7 @@ class AppRouter extends Component {
               <Route exact path="/privacy" component={ withRouter(PrivacyPage) } />
               
               <Route exact path="/projectdetails/:projectID/:projectName" component={ withRouter(ProjectDetailsPage) } />
-              <Route exact path="/coursedetails/:courseID" component={ withRouter(CourseDetailsPage) } />
+              <Route exact path="/coursedetails/:courseID/:courseName" component={ withRouter(CourseDetailsPage) } />
               
               
               {/* Cool ReactJS one-liner for routing to external links */}

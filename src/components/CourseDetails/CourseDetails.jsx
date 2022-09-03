@@ -9,28 +9,56 @@ import React, { Component, Fragment } from 'react'
 import { Col, Container, Row, Button } from 'react-bootstrap'
 import 'video-react/dist/video-react.cjs'
 import { BigPlayButton, Player } from 'video-react'
+import HTMLReactParser from 'html-react-parser'
+import ContactUs from '../ContactUs/ContactUs'
+import Courses from '../Courses/Courses'
 
 class CourseDetails extends Component {
 
-  constructor() {
+  constructor(props) {
     super();
-    this.state = {
-      // courseDetails
-    }
   }
 
 
   render() {
+
+
+    let shortTitle = '';
+    let longTitle = '......';
+    let longDescription = '......';
+    let totalFeatureOne = '';
+    let totalFeatureTwo = '';
+    let totalFeatureThree = '';
+    let totalFeatureFour = '';
+    let totalFeatureFive = '';
+    let allFeatures = '......';
+    let videoUrl = '';
+    let smallImg = '';
+
+    let courseDetailsArray = this.props.courseData;
+
+    if (courseDetailsArray.length == 1) {
+      shortTitle = courseDetailsArray[0]['short_title'];
+      longTitle = courseDetailsArray[0]['long_title'];
+      longDescription = courseDetailsArray[0]['long_description'];
+      totalFeatureOne = courseDetailsArray[0]['total_feature_one'];
+      totalFeatureTwo = courseDetailsArray[0]['total_feature_two'];
+      totalFeatureThree = courseDetailsArray[0]['total_feature_three'];
+      totalFeatureFour = courseDetailsArray[0]['total_feature_four'];
+      totalFeatureFive = courseDetailsArray[0]['total_feature_five'];
+      allFeatures = courseDetailsArray[0]['all_features'];
+      videoUrl = courseDetailsArray[0]['video_url'];
+      smallImg = courseDetailsArray[0]['small_img'];
+    }
+
     return (
       <Fragment>
         <Container className='mt-5'>
             <Row>
                 <Col lg={8} md={6} sm={12} xs={12}>
-                    <h1 className='courseDetailsText'>Lorem ipsum dolor </h1>
-                    <img className='courseDetailsImg' src="https://via.placeholder.com/750x400" alt="" />
-                    <p className='mt-4 courseDescription'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti minus quas necessitatibus maxime soluta molestiae a hic doloribus ad expedita magnam temporibus laboriosam.  <br /><br />
-                    Ratione, dolore at excepturi quaerat nisi veritatis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti minus quas necessitatibus maxime soluta molestiae a hic doloribus ad expedita magnam temporibus laboriosam, ratione, dolore at excepturi quaerat nisi veritatis. <br /><br />
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti minus quas necessitatibus maxime soluta molestiae a hic doloribus ad expedita magnam temporibus laboriosam, ratione, dolore at excepturi quaerat nisi veritatis.</p>
+                    <h1 className='courseDetailsText'>{ longTitle }</h1>
+                    <img className='courseDetailsImg' src={ smallImg } alt="" />
+                    <p className='mt-4 courseDescription'>{ HTMLReactParser(longDescription) }</p>
                 </Col>
 
                 <Col lg={4} md={6} sm={12} xs={12}>
@@ -41,44 +69,41 @@ class CourseDetails extends Component {
                       <li>
                         <FontAwesomeIcon className='iconBullet' icon={faUser} />
                         <span> Enrolled : </span>
-                        1200 studends
+                        { totalFeatureOne }
                       </li>
 
                       <li>
                         <FontAwesomeIcon className='iconBullet' icon={faClock} />
                         <span> Duration : </span>
-                        2 hours
+                        { totalFeatureTwo }
                       </li>
 
                       <li>
                         <FontAwesomeIcon className='iconBullet' icon={faClipboard} />
                         <span> Lectures : </span>
-                        8
+                        { totalFeatureThree }
                       </li>
 
                       <li>
                         <FontAwesomeIcon className='iconBullet' icon={faClone} />
                         <span> Categories : </span>
-                        Technology
+                        { totalFeatureFour }
                       </li>
 
                       <li>
                         <FontAwesomeIcon className='iconBullet' icon={faTags} />
                         <span> Tags : </span>
-                        Android, Javscript
-                      </li>
-
-                      <li>
-                        <FontAwesomeIcon className='iconBullet' icon={faCheckSquare} />
-                        <span> Instructor : </span>
-                        Ethan Dean
+                        { totalFeatureFive }
                       </li>
 
                     </ul>
                     <div className="price-wrap text-center">
-                      <h5>Price: <span>$54.00 </span></h5>
-                      <Button variant='warning'>
-                        Enroll Course
+                      <h2>Skills Gained</h2>
+                      <div className='text-start'>
+                        { HTMLReactParser(allFeatures) }
+                      </div>
+                      <Button variant='warning' href={videoUrl}>
+                        View Course
                       </Button>
                     </div>
                   </div>
@@ -86,59 +111,7 @@ class CourseDetails extends Component {
             </Row>
         </Container>
 
-        <Container className='mt-5'>
-          <Row>
-            <Col lg={6} md={6} sm={12} xs={12}>
-              <div className='widget_feature'>
-                <div>
-                  <h1>Skills You Need</h1>  
-                  <hr />
-                </div>
-                <Row>
-                 <Col lg={6} md={6} sm={6} xs={12}>
-                  <ul>
-                    <li>
-                      <FontAwesomeIcon className='iconBullet' icon={faCheckSquare} /> Lorem ipsum dolor sit
-                    </li>
-
-                    <li>
-                      <FontAwesomeIcon className='iconBullet' icon={faCheckSquare} /> Lorem ipsum dolor sit
-                    </li>
-
-                    <li>
-                      <FontAwesomeIcon className='iconBullet' icon={faCheckSquare} /> Lorem ipsum dolor sit
-                    </li>
-                  </ul>
-                </Col>
-                <Col lg={6} md={6} sm={6} xs={12}>
-                  <ul>
-                    <li>
-                      <FontAwesomeIcon className='iconBullet' icon={faCheckSquare} /> Lorem ipsum dolor sit
-                    </li>
-
-                    <li>
-                      <FontAwesomeIcon className='iconBullet' icon={faCheckSquare} /> Lorem ipsum dolor sit
-                    </li>
-
-                    <li>
-                      <FontAwesomeIcon className='iconBullet' icon={faCheckSquare} /> Lorem ipsum dolor sit
-                    </li>
-                  </ul>
-                </Col>
-               </Row>
-              </div>
-            </Col>
-
-            <Col lg={6} md={6} sm={12} xs={12}>
-
-                <Player src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
-                    <BigPlayButton position="center" />
-                </Player>
-
-            </Col>
-          </Row>
-        </Container>
-
+        <Courses />
 
       </Fragment>
     )

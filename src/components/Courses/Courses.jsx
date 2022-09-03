@@ -43,7 +43,7 @@ class Courses extends Component {
                 <Col lg={6} md={6} sm={12}>
                     <h5 className='serviceName'>{ courseDataList.short_title }</h5>
                     <p className='serviceDescription'>{ courseDataList.short_description }</p>
-                    <Nav.Link className='courseViewMore' href='/coursedetails'>View Details</Nav.Link>
+                    <Nav.Link className='courseViewMore' href={'/coursedetails/'+courseDataList.id+'/'+courseDataList.short_title}>View Details</Nav.Link>
                 </Col>
             </Row>
         </Col>

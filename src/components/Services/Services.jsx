@@ -10,7 +10,7 @@ class Services extends Component {
     super();
     this.state={
       serviceData: [],
-      loaded: true,
+      loading: true,
     }
   }
 
@@ -18,7 +18,7 @@ class Services extends Component {
     RestClient.GetRequest(AppUrl.Services).then(result => {
       this.setState({
         serviceData: result,
-        loaded: false
+        loading: false
       })
     }).catch(error => {
       this.setState({
@@ -30,7 +30,7 @@ class Services extends Component {
 
   render() {
 
-    if (this.state.loaded == true) {
+    if (this.state.loading == true) {
       return <Loading />
     } else {
 

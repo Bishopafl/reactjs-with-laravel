@@ -13,7 +13,7 @@ class Analysis extends Component {
         this.state={
             chartData: [],
             techDesc: "...",
-            loaded: true,
+            loading: true,
         }
     }
 
@@ -21,7 +21,7 @@ class Analysis extends Component {
       RestClient.GetRequest(AppUrl.ChartDataAll).then(result => {
         this.setState({
           chartData: result,
-          loaded: false,
+          loading: false,
         })
       }).catch(error => {
         this.setState({
@@ -38,7 +38,7 @@ class Analysis extends Component {
 
     render() {
 
-      if (this.state.loaded == true) {
+      if (this.state.loading == true) {
         return <Loading />
       } else {
 

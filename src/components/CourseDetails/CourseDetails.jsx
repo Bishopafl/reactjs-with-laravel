@@ -12,11 +12,15 @@ import { BigPlayButton, Player } from 'video-react'
 import HTMLReactParser from 'html-react-parser'
 import ContactUs from '../ContactUs/ContactUs'
 import Courses from '../Courses/Courses'
+import Loading from '../Loading/Loading'
 
 class CourseDetails extends Component {
 
   constructor(props) {
     super();
+    this.state = {
+      loading: true,
+    }
   }
 
 
@@ -49,72 +53,78 @@ class CourseDetails extends Component {
       allFeatures = courseDetailsArray[0]['all_features'];
       videoUrl = courseDetailsArray[0]['video_url'];
       smallImg = courseDetailsArray[0]['small_img'];
+      this.state.loading = false;
     }
 
-    return (
-      <Fragment>
-        <Container className='mt-5'>
-            <Row>
-                <Col lg={8} md={6} sm={12} xs={12}>
-                    <h1 className='courseDetailsText'>{ longTitle }</h1>
-                    <img className='courseDetailsImg' src={ smallImg } alt="" />
-                    <p className='mt-4 courseDescription'>{ HTMLReactParser(longDescription) }</p>
-                </Col>
+    if(this.state.loading == true) {
+      return <Loading />
+    } else {
 
-                <Col lg={4} md={6} sm={12} xs={12}>
-                  <div className="widget_feature">
-                    <h4 className="widget-title text-center">Course Features</h4>
-                    <hr />
-                    <ul>
-                      <li>
-                        <FontAwesomeIcon className='iconBullet' icon={faUser} />
-                        <span> Enrolled : </span>
-                        { totalFeatureOne }
-                      </li>
+      return (
+        <Fragment>
+          <Container className='mt-5'>
+              <Row>
+                  <Col lg={8} md={6} sm={12} xs={12}>
+                      <h1 className='courseDetailsText'>{ longTitle }</h1>
+                      <img className='courseDetailsImg' src={ smallImg } alt="" />
+                      <p className='mt-4 courseDescription'>{ HTMLReactParser(longDescription) }</p>
+                  </Col>
 
-                      <li>
-                        <FontAwesomeIcon className='iconBullet' icon={faClock} />
-                        <span> Duration : </span>
-                        { totalFeatureTwo }
-                      </li>
+                  <Col lg={4} md={6} sm={12} xs={12}>
+                    <div className="widget_feature">
+                      <h4 className="widget-title text-center">Course Features</h4>
+                      <hr />
+                      <ul>
+                        <li>
+                          <FontAwesomeIcon className='iconBullet' icon={faUser} />
+                          <span> Enrolled : </span>
+                          { totalFeatureOne }
+                        </li>
 
-                      <li>
-                        <FontAwesomeIcon className='iconBullet' icon={faClipboard} />
-                        <span> Lectures : </span>
-                        { totalFeatureThree }
-                      </li>
+                        <li>
+                          <FontAwesomeIcon className='iconBullet' icon={faClock} />
+                          <span> Duration : </span>
+                          { totalFeatureTwo }
+                        </li>
 
-                      <li>
-                        <FontAwesomeIcon className='iconBullet' icon={faClone} />
-                        <span> Categories : </span>
-                        { totalFeatureFour }
-                      </li>
+                        <li>
+                          <FontAwesomeIcon className='iconBullet' icon={faClipboard} />
+                          <span> Lectures : </span>
+                          { totalFeatureThree }
+                        </li>
 
-                      <li>
-                        <FontAwesomeIcon className='iconBullet' icon={faTags} />
-                        <span> Tags : </span>
-                        { totalFeatureFive }
-                      </li>
+                        <li>
+                          <FontAwesomeIcon className='iconBullet' icon={faClone} />
+                          <span> Categories : </span>
+                          { totalFeatureFour }
+                        </li>
 
-                    </ul>
-                    <div className="price-wrap text-center">
-                      <h2>Skills Gained</h2>
-                      <div className='text-start'>
-                        { HTMLReactParser(allFeatures) }
+                        <li>
+                          <FontAwesomeIcon className='iconBullet' icon={faTags} />
+                          <span> Tags : </span>
+                          { totalFeatureFive }
+                        </li>
+
+                      </ul>
+                      <div className="price-wrap text-center">
+                        <h2>Skills Gained</h2>
+                        <div className='text-start'>
+                          { HTMLReactParser(allFeatures) }
+                        </div>
+                        <Button variant='warning' href={videoUrl}>
+                          View Course
+                        </Button>
                       </div>
-                      <Button variant='warning' href={videoUrl}>
-                        View Course
-                      </Button>
                     </div>
-                  </div>
-                </Col>
-            </Row>
-        </Container>
+                  </Col>
+              </Row>
+          </Container>
 
-        <Courses />
+          <Courses />
 
-      </Fragment>
-    )
+        </Fragment>
+      )
+    } // end else
   }
 }
 

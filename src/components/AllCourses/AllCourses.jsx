@@ -7,6 +7,7 @@ import courseReactLaravel from '../../asset/image/courses/reactjs-laravel.png';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
+import WentWrong from '../../components/WentWrong/WentWrong';
 
 class AllCourses extends Component {
     constructor() {
@@ -14,19 +15,29 @@ class AllCourses extends Component {
         this.state = {
             allCourseData : [],
             loading: true,
+            error: false,
         }
     }
 
     componentDidMount() {
         RestClient.GetRequest(AppUrl.CourseAll).then(result => {
-            this.setState({
-                allCourseData: result,
-                loading: false,
-            });
+
+            if (result == null) {
+                this.setState({
+                    error: true,
+                    loading: false,
+                });
+            } else {
+                this.setState({
+                    allCourseData: result,
+                    loading: false,
+                });
+            }
         }).catch(error => {
             this.setState({
                 allCourseData: '',
-            })
+                error: true,
+            });
         });
     }
 
@@ -34,7 +45,7 @@ class AllCourses extends Component {
   render() {
     if (this.state.loading == true) {
             return <Loading />
-    } else {
+    } else if(this.state.loading == false) {
         const allCoursesList = this.state.allCourseData;
         const allCoursesView = allCoursesList.map(allCoursesList => {
             return <Col lg={6} md={12} sm={12}>
@@ -66,7 +77,10 @@ class AllCourses extends Component {
             </Container>
         </Fragment>
         )
-    } // end else
+    } else if(this.state.error == true) {
+        return <WentWrong />
+    } 
+    // end else
   }
 }
 

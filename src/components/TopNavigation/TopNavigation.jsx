@@ -4,6 +4,7 @@ import whiteLogo from '../../asset/image/logo_white.png';
 import blackLogo from '../../asset/image/logo_black.png';
 import '../../asset/css/bootstrap.min.css';
 import '../../asset/css/custom.css';
+import '../../asset/css/responsive.css';
 import { Link, NavLink, Route } from 'react-router-dom';
 
 class TopNavigation extends Component {

@@ -6,6 +6,7 @@ import linkedInImage from '../../asset/image/linkedin.gif';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
+import WentWrong from '../../components/WentWrong/WentWrong';
 
 class AllProjects extends Component {
 
@@ -14,14 +15,26 @@ class AllProjects extends Component {
         this.state = {
             allProjectData: [],
             loading: true,
+            error: false,
         }
     }
 
     componentDidMount() {
         RestClient.GetRequest(AppUrl.ProjectAll).then(result => {
+            if (result == null) {
+                this.setState({
+                    error: true,
+                    loading: false,
+                });
+            } else {
+                this.setState({
+                    allProjectData: result,
+                    loading: false,
+                });
+            }
+        }).catch(error => {
             this.setState({
-                allProjectData: result,
-                loading: false,
+                error: true,
             })
         })
     }
@@ -29,7 +42,7 @@ class AllProjects extends Component {
   render() {
     if (this.state.loading == true) {
         return <Loading />
-    } else {
+    } else if(this.state.loading == false) {
 
         const allProjectList = this.state.allProjectData;
         const allProjectView = allProjectList.map(allProjectList => {
@@ -72,7 +85,10 @@ class AllProjects extends Component {
             </Container>
         </Fragment>
         )
-    } // end else
+    } else if(this.state.error ==true) {
+        return <WentWrong />
+    } 
+    // end else
   }
 }
 

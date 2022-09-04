@@ -22,6 +22,7 @@ class RefundDescription extends Component {
             if (result == null) {
                 this.setState({
                     error: true,
+                    loading: false,
                 })
             } else {
                 this.setState({

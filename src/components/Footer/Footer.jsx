@@ -10,6 +10,7 @@ import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 import ListGroup from 'react-bootstrap/ListGroup';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
+import Loading from '../Loading/Loading';
 
 class Footer extends Component {
 
@@ -23,6 +24,8 @@ class Footer extends Component {
       socialTwo: '....',
       socialThree: '....',
       credits : '.....',
+      loaderClass: 'p-5 text-justify',
+      mainDivClass: 'd-none',
     }
   }
 
@@ -36,6 +39,8 @@ class Footer extends Component {
         socialTwo : result[0]['social-two'],
         socialThree : result[0]['social-three'],
         credits : result[0].footer_credits,
+        loaderClass: 'd-none',
+        mainDivClass: 'text-center',
       })
     }).catch(error => {
       this.setState({
@@ -56,7 +61,11 @@ class Footer extends Component {
       <Fragment>
         <Container fluid={true} className="footerSection">
             <Row>
-                <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-center">
+                <Col className={this.state.loaderClass}>
+                  <Loading />
+                </Col>
+
+                <Col lg={3} md={6} sm={12} xs={6} className={this.state.mainDivClass}>
                     <h2 className='footerName text-center'>Follow Us</h2>
                     <div className="socialContainer">
                       <a href={this.state.socialOne} className='social'>
@@ -80,7 +89,7 @@ class Footer extends Component {
                     </div>
                 </Col>
 
-                <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-justify">
+                <Col lg={3} md={6} sm={12} xs={6} className={this.state.mainDivClass}>
                     <h2 className='footerName'>Address</h2>
                     <div className='footerDescription d-grid'>
                       <span>
@@ -95,7 +104,7 @@ class Footer extends Component {
                     </div>
                 </Col>
 
-                <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-justify">
+                <Col lg={3} md={6} sm={12} xs={6} className={this.state.mainDivClass}>
                     <h2 className='footerName'>Information</h2>
                     <div className='d-grid footerLinks'>
                     <Nav defaultActiveKey="/" className="flex-column">
@@ -107,7 +116,7 @@ class Footer extends Component {
                     </div>
                 </Col>
 
-                <Col lg={3} md={6} sm={12} xs={6} className="p-5 text-justify">
+                <Col lg={3} md={6} sm={12} xs={6} className={this.state.mainDivClass}>
                     <h2 className='footerName'>Policy</h2>
                     <div className='d-grid footerLinks'>
                     <Nav className="flex-column">

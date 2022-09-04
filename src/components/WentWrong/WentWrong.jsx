@@ -8,7 +8,7 @@ class WentWrong extends Component {
       <Fragment>
         <Container >
             <Row>
-                <Col>
+                <Col className='text-center'>
                     <img className='error-icon' src={errorIcon} alt="" />
                 </Col>
             </Row>

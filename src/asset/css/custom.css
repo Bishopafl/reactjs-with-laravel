@@ -622,5 +622,10 @@ a.social:hover {
 
 .loader-animation {
     width: 140px;
-    height: 140px;;
+    height: 140px;
+}
+
+.error-icon {
+    width: 180px;
+    height: 180px;
 }

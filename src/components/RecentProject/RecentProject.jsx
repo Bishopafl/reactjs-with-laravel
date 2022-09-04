@@ -7,6 +7,8 @@ import { Link, NavLink } from 'react-router-dom';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
+import Bounce from 'react-reveal/Bounce';
+import Zoom from 'react-reveal/Bounce';
 
 class RecentProject extends Component {
   
@@ -41,7 +43,7 @@ class RecentProject extends Component {
       const projectDataList = this.state.projectData;
 
       const projectDetailsView = projectDataList.map(projectDataList => {
-          return  <Col lg={4} md={6} sm={12}>
+          return  <Col lg={4} md={6} sm={12}><Zoom>
           <Card className='projectCard'>
               
               <Card.Img className='projectCardImg' src={ projectDataList.card_img } />
@@ -62,19 +64,20 @@ class RecentProject extends Component {
                   </Stack>
               </Card.Body>
           </Card>
+        </Zoom>
       </Col>
       })
 
       return (
         <Fragment>
           <Container className='text-center'>
+            <Bounce>
               <h1 className='seviceMainTitle'>Recent Projects</h1>
-              <div className='bottom'></div>
-              <Row>
-
-                  {projectDetailsView}
-                
-              </Row>
+            </Bounce>
+            <div className='bottom'></div>
+            <Row>
+                {projectDetailsView}
+            </Row>
           </Container>
         </Fragment>
       )

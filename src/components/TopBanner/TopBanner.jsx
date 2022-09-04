@@ -4,6 +4,7 @@ import axios from 'axios';
 import AppUrl from '../../RestAPI/AppUrl';
 import RestClient from '../../RestAPI/RestClient';
 import Loading from '../Loading/Loading';
+import Bounce from 'react-reveal/Bounce';
 
 class TopBanner extends Component {
 
@@ -46,9 +47,10 @@ class TopBanner extends Component {
                         </Col>
 
                         <Col className={this.state.mainDivClass}>
+                          <Bounce top>
                             <h1 className='topTitle'>{ this.state.title }</h1>
                             <h3 className='topSubTitle'>{ this.state.subtitle }</h3>
-                            <Button variant='primary'>Learn More</Button>{' '}
+                          </Bounce>
                         </Col>
                     </Row>
                 </Container>

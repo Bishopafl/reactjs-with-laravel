@@ -7,6 +7,7 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
+import Zoom from 'react-reveal/Zoom';
 
 class ContactUs extends Component {
 
@@ -80,6 +81,7 @@ class ContactUs extends Component {
                     </Col>
 
                     <Col lg={6} md={6} sm={12} xs={12}>
+                      <Zoom right>
                         <h1 className='serviceName'>Discuss with Us</h1>
                         <div className='serviceDescription d-grid'>
                           <span>
@@ -92,6 +94,7 @@ class ContactUs extends Component {
                             <FontAwesomeIcon icon={faPhone} /> Phone: {this.state.phone}
                           </span>
                         </div>
+                      </Zoom>
                     </Col>
                 </Row>
             </Container>

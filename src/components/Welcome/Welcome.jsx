@@ -6,6 +6,8 @@ import cardImageThree from '../../asset/image/page3.png';
 import lightBulbIcon from '../../asset/image/welcome/animat-lightbulb-color.gif';
 import lineChartIcon from '../../asset/image/welcome/animat-linechart-color.gif';
 import responsiveIcon from '../../asset/image/welcome/animat-responsive-color.gif';
+import Tada from 'react-reveal/Tada';
+import Fade from 'react-reveal/Fade';
 
 class Welcome extends Component {
   render() {
@@ -17,28 +19,36 @@ class Welcome extends Component {
                 <Col lg={12} md={12} sm={12} xs={12}>
                 <div className='section-title text-center'>
                     <div className='intro-area--inner'>
-                        <h6 className='sub-title double-line'>WELCOME</h6>
-                        <h2 className='maintitle'>
-                            How May I Assist You?
-                        </h2>
+                        <Tada>
+                            <h6 className='sub-title double-line'>WELCOME</h6>
+                            <h2 className='maintitle'>
+                                How May I Assist You?
+                            </h2>
+                        </Tada>
 
 
                         <Container className='text-center mt-5'>
                             <Row>
                                 <Col lg={4} md={6} sm={12} xs={12}>
-                                    <img src={cardImageOne} alt="column 1 image" />
+                                    <Fade left>
+                                        <img src={cardImageOne} alt="column 1 image" />
+                                    </Fade>
                                     <h1 className='serviceName' >Design</h1>
                                     <p className='serviceDescription'>Lorem ipsum dolor sit amet adipisicing elit.</p>
                                 </Col>
 
                                 <Col lg={4} md={6} sm={12} xs={12}>
-                                    <img src={cardImageTwo} alt="column 2 image" />
+                                    <Fade top>
+                                        <img src={cardImageTwo} alt="column 2 image" />
+                                    </Fade>
                                     <h1 className='serviceName'>Develop</h1>
                                     <p className='serviceDescription'>Lorem ipsum dolor, sit amet adipisicing elit.</p>
                                 </Col>
 
                                 <Col lg={4} md={6} sm={12} xs={12}>
-                                    <img src={cardImageThree} alt="column 3 image" />
+                                    <Fade right>
+                                        <img src={cardImageThree} alt="column 3 image" />
+                                    </Fade>                                    
                                     <h1 className='serviceName'>Support</h1>
                                     <p className='serviceDescription'>Lorem ipsum dolor, sit amet adipisicing elit.</p>
                                 </Col>

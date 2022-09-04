@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
+import Bounce from 'react-reveal/Bounce';
+import Zoom from 'react-reveal/Zoom';
 
 class Courses extends Component {
 
@@ -42,17 +44,19 @@ class Courses extends Component {
         const courseDataList = this.state.courseData;
         const courseDataView = courseDataList.map(courseDataList => {
             return <Col lg={6} md={12} sm={12}>
-                <Row>
-                    <Col lg={6} md={6} sm={12} className='p-2'>
-                        <img className='courseImg' src={courseDataList.small_img} alt="" />
-                    </Col>
+                <Zoom>
+                    <Row>
+                        <Col lg={6} md={6} sm={12} className='p-2'>
+                            <img className='courseImg' src={courseDataList.small_img} alt="" />
+                        </Col>
 
-                    <Col lg={6} md={6} sm={12}>
-                        <h5 className='serviceName'>{ courseDataList.short_title }</h5>
-                        <p className='serviceDescription'>{ courseDataList.short_description }</p>
-                        <Nav.Link className='courseViewMore' href={'/coursedetails/'+courseDataList.id+'/'+courseDataList.short_title}>View Details</Nav.Link>
-                    </Col>
-                </Row>
+                        <Col lg={6} md={6} sm={12}>
+                            <h5 className='serviceName'>{ courseDataList.short_title }</h5>
+                            <p className='serviceDescription'>{ courseDataList.short_description }</p>
+                            <Nav.Link className='courseViewMore' href={'/coursedetails/'+courseDataList.id+'/'+courseDataList.short_title}>View Details</Nav.Link>
+                        </Col>
+                    </Row>
+                </Zoom>
             </Col>
         });
 
@@ -60,7 +64,9 @@ class Courses extends Component {
         <Fragment>
             <Container>
                 <div className='text-center'>
-                    <h1 className="serviceMainTitle">Current Learnings</h1>
+                    <Bounce>
+                        <h1 className="serviceMainTitle">Current Learnings</h1>
+                    </Bounce>
                     <div className="bottom"></div>
                 </div>
                 <Row>

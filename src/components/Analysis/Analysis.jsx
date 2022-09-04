@@ -5,6 +5,8 @@ import AppUrl from '../../RestAPI/AppUrl';
 import RestClient from '../../RestAPI/RestClient';
 import parse from 'html-react-parser';
 import Loading from '../Loading/Loading';
+import Bounce from 'react-reveal/Bounce';
+import Fade from 'react-reveal/Fade';
 
 class Analysis extends Component {
 
@@ -58,27 +60,29 @@ class Analysis extends Component {
           <Fragment>
             <Container>
                 <div className='text-center'>
-                <h1 className='serviceMainTitle'>Technology Used</h1>
+                  <Bounce>
+                    <h1 className='serviceMainTitle'>Technology Used</h1>    
+                  </Bounce>
                 </div>
                 <div className='bottom'></div>
                 <Row>
                     <Col lg={6} md={12} sm={12}>
                         <ResponsiveContainer>
-
+                          
                             <RadarChart outerRadius="80%" data={chartDataArray}>
                             <PolarGrid />
                             <PolarAngleAxis dataKey="subject" />
                             <PolarRadiusAxis />
                             <Radar name="Lopez Marketing" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
                             </RadarChart>
-
+                          
                         </ResponsiveContainer>
-
-
                     </Col>
 
                     <Col lg={6} md={12} sm={12}>
+                      <Fade right>
                         <p className='text-justify serviceDescription'>{ parse(this.state.techDesc) }</ p>
+                      </Fade>
                     </Col>
                 </Row>
             </Container>

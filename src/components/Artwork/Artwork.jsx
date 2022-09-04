@@ -4,6 +4,7 @@ import PhotoAlbum from 'react-photo-album';
 import AppUrl from '../../RestAPI/AppUrl';
 import RestClient from '../../RestAPI/RestClient';
 import Loading from '../Loading/Loading';
+import Bounce from 'react-reveal/Bounce';
 
 class Artwork extends Component {
 
@@ -46,7 +47,9 @@ class Artwork extends Component {
         <Fragment>
             <Container>
                 <div className='text-center'>
-                    <h1 className="serviceMainTitle">Artwork</h1>
+                    <Bounce>
+                        <h1 className="serviceMainTitle">Artwork</h1>
+                    </Bounce>
                     <div className="bottom"></div>
                 </div>
                 <Row>

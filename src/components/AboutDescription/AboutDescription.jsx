@@ -5,6 +5,7 @@ import RestClient from '../../RestAPI/RestClient';
 import parse from 'html-react-parser';
 import Loading from '../Loading/Loading';
 import WentWrong from '../WentWrong/WentWrong';
+import Zoom from 'react-reveal/Zoom';
 
 class AboutDescription extends Component {
 
@@ -51,7 +52,9 @@ class AboutDescription extends Component {
             <Container className='mt-5'>
                 <Row>
                     <Col sm={12} lg={12}>
-                        { parse(aboutData) }
+                        <Zoom>
+                            { parse(aboutData) }
+                        </Zoom>
                     </Col>
                 </Row>
             </Container>

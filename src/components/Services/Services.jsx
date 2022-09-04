@@ -3,6 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
+import Zoom from 'react-reveal/Zoom';
+import Bounce from 'react-reveal/Bounce';
 
 class Services extends Component {
 
@@ -38,19 +40,23 @@ class Services extends Component {
 
       const serviceDataView = serviceDataList.map(serviceDataList => {
         return <Col lg={4} md={4} sm={12}>
-                  <div className='serviceCard text-center'>
-                      <img className='cloudnetworkIcon' src={serviceDataList.service_logo} />
-                      <h2 className='serviceName'>{serviceDataList.service_name}</h2>
-                      <p className='serviceDescription'>{serviceDataList.service_description}</p>
-                  </div>
-              </Col>
+                <Zoom top>
+                    <div className='serviceCard text-center'>
+                        <img className='cloudnetworkIcon' src={serviceDataList.service_logo} />
+                        <h2 className='serviceName'>{serviceDataList.service_name}</h2>
+                        <p className='serviceDescription'>{serviceDataList.service_description}</p>
+                    </div>
+                    </Zoom>
+                </Col>
       });
 
 
       return (
         <Fragment>
           <Container className='text-center'>
-              <h1 className='serviceMainTitle'>My Services</h1>
+              <Bounce>
+                <h1 className='serviceMainTitle'>My Services</h1>
+              </Bounce>
               <div className='bottom'></div>
               <Row>
                   {serviceDataView}

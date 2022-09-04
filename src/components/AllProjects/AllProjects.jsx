@@ -7,6 +7,8 @@ import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
 import WentWrong from '../../components/WentWrong/WentWrong';
+import Bounce from 'react-reveal/Bounce';
+import Zoom from 'react-reveal/Zoom';
 
 class AllProjects extends Component {
 
@@ -47,6 +49,7 @@ class AllProjects extends Component {
         const allProjectList = this.state.allProjectData;
         const allProjectView = allProjectList.map(allProjectList => {
             return <Col lg={4} md={6} sm={12}>
+                <Zoom>
             <Card className='projectCard'>
                 <Card.Img src={allProjectList.card_img} />
                 <Card.Body>
@@ -67,14 +70,17 @@ class AllProjects extends Component {
                     </Row>
                 </Card.Body>
             </Card>
+            </Zoom>
         </Col>
         })
 
         return (
             <Fragment>
             <Container>
-                <div className='text-center'>
-                    <h1 className='seviceMainTitle'>Recent Projects</h1>
+                <div className='text-center mt-5'>
+                    <Bounce>
+                        <h1 className='seviceMainTitle'>Recent Projects</h1>
+                    </Bounce>
                     <div className='bottom'></div>
                 </div>
                 

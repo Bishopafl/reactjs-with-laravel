@@ -6,6 +6,7 @@ import Slider from 'react-slick';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
+import Bounce from 'react-reveal/Bounce';
 
 class ClientReview extends Component {
   
@@ -96,8 +97,10 @@ class ClientReview extends Component {
         <Fragment>
           <Container fluid={true} className="siderBack">
               <div className='text-center'>
+                <Bounce>
                   <h1 className='reviewMainTitle p-3'>Testimonials</h1>
-                  <div className="reviewBottom "></div>
+                </Bounce>
+                <div className="reviewBottom "></div>
               </div>
               <Slider {...settings}>
                   { clientReviewView }

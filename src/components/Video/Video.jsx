@@ -8,6 +8,8 @@ import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import parse from 'html-react-parser';
 import Loading from '../Loading/Loading';
+import Bounce from 'react-reveal/Bounce';
+import Zoom from 'react-reveal/Zoom';
 
 class Video extends Component {
 
@@ -49,14 +51,18 @@ class Video extends Component {
         <Fragment>
             <Container className='text-center'>
                 <div>
-                    <h1 className='serviceMainTitle'>Our Videos</h1>
+                    <Bounce>
+                        <h1 className='serviceMainTitle'>Our Videos</h1>
+                    </Bounce>
                     <div className="bottom"></div>
                 </div>
                 <Row>
                     <Col lg={6} md={6} sm={12} className='videoText'>
-                        <div className='serviceDescription text-start'>
-                            { parse(this.state.video_description) }
-                        </div>
+                        <Zoom>
+                            <div className='serviceDescription text-start'>
+                                { parse(this.state.video_description) }
+                            </div>
+                        </Zoom>
                     </Col>
 
                     <Col lg={6} md={6} sm={12} className='videoCard'>

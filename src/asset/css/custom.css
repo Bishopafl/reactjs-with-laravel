@@ -64,7 +64,7 @@
     font-weight: 400;
 }
 
-.serviceMainTitle {
+.seviceMainTitlee {
     color: #051b35;
     margin-top: 5rem;
     margin-bottom: 3rem;
@@ -224,7 +224,6 @@
 .projectCard {
     background: white;
     border-radius: 0.6rem;
-    margin: 1em;
     cursor: pointer;
     box-shadow: 0 13px 25px -5px;
     transition: all ease 200ms;

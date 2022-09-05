@@ -18,6 +18,8 @@ import TermsPage from '../pages/TermsPage';
 import PrivacyPage from '../pages/PrivacyPage';
 import ProjectDetailsPage from '../pages/ProjectDetailsPage';
 import CourseDetailsPage from '../pages/CourseDetailsPage';
+import NotFound from '../components/NotFound/NotFound';
+import PageNotFound from '../pages/PageNotFound';
 
 class AppRouter extends Component {
   render() {
@@ -45,6 +47,8 @@ class AppRouter extends Component {
                   window.location.href = 'https://github.com/Bishopafl';
                   return null;
               }}/>
+
+              <Route component={PageNotFound} />
           </Switch>
       </Fragment>
     )

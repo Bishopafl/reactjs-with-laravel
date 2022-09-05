@@ -64,7 +64,7 @@
     font-weight: 400;
 }
 
-.seviceMainTitlee {
+.seviceMainTitle {
     color: #051b35;
     margin-top: 5rem;
     margin-bottom: 3rem;
@@ -627,4 +627,62 @@ a.social:hover {
 .error-icon {
     width: 180px;
     height: 180px;
+}
+/*======================
+    404 page
+=======================*/
+.notFound {
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: #051b35;
+}
+
+.notFountContainer {
+    background-color: #2F3242;
+}
+
+.page_404{
+    padding:40px 0;
+    background:#fff;
+    font-family: 'Montserrat', san-serif;
+}
+
+.page_404  img{ width:100%;}
+
+.notFoundMainTitle {
+    color: #051b35;
+    margin-bottom: 3rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.four_zero_four_bg{
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-position: center;
+ }
+ 
+ 
+ .four_zero_four_bg h1{
+    font-size:80px;
+ }
+ 
+.four_zero_four_bg h3{
+    font-size:80px;
+}
+			 
+.link_404{			 
+	color: #051b35;
+    padding: 10px 20px;
+    background: #ffee00;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+}
+.contant_box_404{
+    margin-top:-50px;
 }

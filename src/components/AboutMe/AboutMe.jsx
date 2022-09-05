@@ -10,7 +10,7 @@ class AboutMe extends Component {
   render() {
     return (
       <Fragment>
-        <Container className='text-center'>
+        <Container className='text-center mt-5'>
             <Bounce>
                 <h1 className='serviceMainTitle'>About Me</h1>
             </Bounce>

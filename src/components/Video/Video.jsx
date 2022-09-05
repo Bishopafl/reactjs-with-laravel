@@ -49,7 +49,7 @@ class Video extends Component {
     } else {
         return (
         <Fragment>
-            <Container className='text-center'>
+            <Container className='text-center mt-5'>
                 <div>
                     <Bounce>
                         <h1 className='serviceMainTitle'>Our Videos</h1>

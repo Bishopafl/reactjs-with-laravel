@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import {
-    BrowserRouter,
-    Switch,
-    Route,
-    Router,
-    withRouter,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
 } from "react-router-dom";
 import HomePage from '../pages/HomePage';
 import AllServicesPage from '../pages/AllServicesPage';
@@ -18,7 +17,6 @@ import TermsPage from '../pages/TermsPage';
 import PrivacyPage from '../pages/PrivacyPage';
 import ProjectDetailsPage from '../pages/ProjectDetailsPage';
 import CourseDetailsPage from '../pages/CourseDetailsPage';
-import NotFound from '../components/NotFound/NotFound';
 import PageNotFound from '../pages/PageNotFound';
 
 class AppRouter extends Component {
@@ -26,20 +24,20 @@ class AppRouter extends Component {
     return (
       <Fragment>
           <Switch>
-              <Route exact path="/" component={ withRouter(HomePage) } />
-              <Route exact path="/service" component={ withRouter(AllServicesPage) } />
-              <Route exact path="/course" component={ withRouter(AllCoursePage) } />
-              <Route exact path="/portfolio" component={ withRouter(PortfolioPage) } />
-              <Route exact path="/about" component={ withRouter(AboutPage) } />
-              <Route exact path="/artwork" component={ withRouter(ArtworkPage) } />
-              <Route exact path="/contact" component={ withRouter(ContactPage) } />
+              <Route exact path="/" component={ HomePage } />
+              <Route exact path="/service" component={ AllServicesPage } />
+              <Route exact path="/course" component={ AllCoursePage } />
+              <Route exact path="/portfolio" component={ PortfolioPage } />
+              <Route exact path="/about" component={ AboutPage } />
+              <Route exact path="/artwork" component={ ArtworkPage } />
+              <Route exact path="/contact" component={ ContactPage } />
               
-              <Route exact path="/refund" component={ withRouter(RefundPage) } />
-              <Route exact path="/terms-and-conditions" component={ withRouter(TermsPage) } />
-              <Route exact path="/privacy" component={ withRouter(PrivacyPage) } />
+              <Route exact path="/refund" component={ RefundPage } />
+              <Route exact path="/terms-and-conditions" component={ TermsPage } />
+              <Route exact path="/privacy" component={ PrivacyPage } />
               
-              <Route exact path="/projectdetails/:projectID/:projectName" component={ withRouter(ProjectDetailsPage) } />
-              <Route exact path="/coursedetails/:courseID/:courseName" component={ withRouter(CourseDetailsPage) } />
+              <Route exact path="/projectdetails/:projectID/:projectName" component={ ProjectDetailsPage } />
+              <Route exact path="/coursedetails/:courseID/:courseName" component={ CourseDetailsPage } />
               
               
               {/* Cool ReactJS one-liner for routing to external links */}

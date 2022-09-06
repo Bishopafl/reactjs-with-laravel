@@ -79,7 +79,7 @@ class AllProjects extends Component {
             <Container>
                 <div className='text-center mt-5'>
                     <Bounce>
-                        <h1 className='seviceMainTitle'>Recent Projects</h1>
+                        <h1 className='serviceMainTitle'>Recent Projects</h1>
                     </Bounce>
                     <div className='bottom'></div>
                 </div>

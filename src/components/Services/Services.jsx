@@ -5,6 +5,9 @@ import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
 import Zoom from 'react-reveal/Zoom';
 import Bounce from 'react-reveal/Bounce';
+import cloudnetworkIcon from '../../asset/image/cloud-network.gif';
+import barchartIcon from '../../asset/image/bar-chart.gif';
+import internetIcon from '../../asset/image/internet.gif';
 
 class Services extends Component {
 
@@ -53,7 +56,7 @@ class Services extends Component {
 
       return (
         <Fragment>
-          <Container className='text-center'>
+          <Container className='text-center mt-5'>
               <Bounce>
                 <h1 className='serviceMainTitle'>My Services</h1>
               </Bounce>

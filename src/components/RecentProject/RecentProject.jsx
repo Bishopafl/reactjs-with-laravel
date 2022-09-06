@@ -44,7 +44,7 @@ class RecentProject extends Component {
 
       const projectDetailsView = projectDataList.map(projectDataList => {
           return  <Col lg={4} md={6} sm={12}><Zoom>
-          <Card className='projectCard'>
+          <Card className='projectCard my-4'>
               
               <Card.Img className='projectCardImg' src={ projectDataList.card_img } />
 
@@ -70,9 +70,9 @@ class RecentProject extends Component {
 
       return (
         <Fragment>
-          <Container className='text-center'>
+          <Container className='text-center recentProjectContainer'>
             <Bounce>
-              <h1 className='seviceMainTitle'>Recent Projects</h1>
+              <h1 className='serviceMainTitle'>Recent Projects</h1>
             </Bounce>
             <div className='bottom'></div>
             <Row>

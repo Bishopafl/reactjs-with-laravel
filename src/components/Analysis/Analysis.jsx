@@ -58,7 +58,7 @@ class Analysis extends Component {
 
         return (
           <Fragment>
-            <Container className='mt-5'>
+            <Container className='my-5'>
                 <div className='text-center'>
                   <Bounce>
                     <h1 className='serviceMainTitle'>Technology Used</h1>    

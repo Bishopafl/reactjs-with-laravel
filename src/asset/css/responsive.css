@@ -9,13 +9,19 @@
     .projectCard {
         width: 24em;
     }
-    .seviceMainTitle {
+    .serviceMainTitle {
         margin-top: 13rem;
     }
     .aboutMeImage {
         width: 400px;
         height: 400px;
         margin-bottom: -129px;
+    }
+    .recentProjectContainer {
+        margin-top: 350px;
+    }
+    .countNumber {
+        font-size: 36px;
     }
 }
 
